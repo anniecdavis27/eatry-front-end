@@ -6,10 +6,10 @@ function SignInForm({ input, handleChange }) {
     <div className="sign-in-form">
       <form>
         <label>Username: </label>
-        <input placeholder="Enter your username" type="text" value={input} onChange={handleChange} />
+        <input placeholder="Enter your username" type="text" name="username" value={input} onChange={handleChange} required/>
         <br />
         <label>Password: </label>
-        <input placeholder="Enter your username" type="password" value={input} onChange={handleChange} />
+        <input placeholder="Enter your username" type="password" name="password" value={input} onChange={handleChange} required />
       </form>
     </div>
   );
