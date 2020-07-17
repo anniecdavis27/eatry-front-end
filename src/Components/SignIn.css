@@ -1,0 +1,17 @@
+ @import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
+ 
+ body {
+     background: #aa2020;
+     color: white;
+     font-family: 'Bubbler One', sans-serif;
+     margin-top: 150px;
+     font-size: 60px;
+ }
+ button {
+     color: #aa2020;
+     width: 270px;
+     height:100px;
+     border-radius: 60px;
+     font-size: 40px;
+     font-weight: bold;
+ }
