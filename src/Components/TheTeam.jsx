@@ -15,7 +15,6 @@ function TheTeam() {
             <div className='team-Member'>
             <h3>Annie Davis</h3>
             </div>
-      
         </Layout>
     </div>
   );
