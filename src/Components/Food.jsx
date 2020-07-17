@@ -48,6 +48,7 @@ const Work = (props) =>  {
             <h3>Sodium: {sodium}mg</h3>
             <h3>Cholesterol: {cholesterol}mg</h3>
             <h3>Potassium: {potassium}mg</h3>
+            <button>Log</button>
         </Layout>
         </>
     )
