@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 import Layout from './Layout'
 
 const Work = (props) =>  {
     console.log('Food', props)
-  const [food, setFood] = useState(null)
+  const [food, setFood] = useState(null) 
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -24,9 +24,27 @@ const Work = (props) =>  {
 
   console.log(food)
 
+  const toggleLogged = (food) => {
+    if (food.isLogged === false){
+    axios({
+        url: `${apiUrl}/foods/${food._id}/`,
+        method: "PUT",
+        data: { isLogged: true },
+      }) 
+    } else if (food.isLogged === true) {
+    axios({
+        url: `${apiUrl}/foods/${food._id}/`,
+        method: "PUT",
+        data: { isLogged: false },
+      }) 
+      }
+     window.location.reload()
+}
+
   if (!food) {
       return <p>...loading</p>
   }
+  console.log(food.isLogged)
 
   const name = food.name
   const calories = food.calories
@@ -36,6 +54,8 @@ const Work = (props) =>  {
   const cholesterol = food.cholesterol
   const potassium = food.potassium
   const sodium = food.sodium
+
+  
 
     return (
         <>
@@ -48,7 +68,9 @@ const Work = (props) =>  {
             <h3>Sodium: {sodium}mg</h3>
             <h3>Cholesterol: {cholesterol}mg</h3>
             <h3>Potassium: {potassium}mg</h3>
-            <button>Log</button>
+            <button onClick={() => toggleLogged(food)}>{!food.isLogged ? "Log" : "Remove"}</button>
+            <br />
+            <Link to='/foods'><button>Back to All Foods</button></Link>
         </Layout>
         </>
     )
