@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './Layout'
+import './Dash.css'
 
 function Dash() {
   return (
