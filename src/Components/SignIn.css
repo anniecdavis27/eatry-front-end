@@ -4,21 +4,20 @@
  body {
      background: #aa2020;
      color: white;
-     font-family: 'Bubbler One', sans-serif;
      margin-top: 150px;
      font-size: 60px;
      font-family: 'Roboto', sans-serif;
  }
  h1 {
     font-family: 'Bubbler One', sans-serif; 
+    text-align: center;
  }
  label {
      font-size: 40px;
-    
  }
  input {
      height: 28px;
-     width: 180px;
+     width: 170px;
      margin-bottom: 7px;
      font-size: 20px;
  }
