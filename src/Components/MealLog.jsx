@@ -32,6 +32,7 @@ function MealLog() {
       <Layout>
         <h2>Today: </h2>
         <ul>{loggedFoodsArr}</ul>
+        <Link><button>End Day</button></Link>
       </Layout>
     </div>
   );
