@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body {
+    background-color: #ba2323;
+    color: white;
+    margin-top: 200px;
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 60px;
+}
+button {
+    margin-top: 20px;
+    width: 130px;
+    height: 40px;
+    border-radius: 60px;
+    font-size: 25px;
+    color: #ba2323;
+}
