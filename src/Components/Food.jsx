@@ -77,7 +77,7 @@ const Work = (props) => {
     <>
       <Layout>
         <h2>{name}</h2>
-        <h3>Calories: {calories}g</h3>
+        <h3>Calories: {calories}</h3>
         <h3>Carbs: {carbs}g</h3>
         <h3>Protein: {protein}g</h3>
         <h3>Fat: {fat}g</h3>
