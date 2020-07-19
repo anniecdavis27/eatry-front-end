@@ -41,6 +41,13 @@ const Work = (props) =>  {
      window.location.reload()
 }
 
+const deleteItem = (food) => {
+  axios({
+    url: `${apiUrl}/foods/name/${food.name}`,
+    method: "DELETE"
+  }) 
+}
+
   if (!food) {
       return <p>...loading</p>
   }
@@ -68,7 +75,11 @@ const Work = (props) =>  {
             <h3>Sodium: {sodium}mg</h3>
             <h3>Cholesterol: {cholesterol}mg</h3>
             <h3>Potassium: {potassium}mg</h3>
-            <button onClick={() => toggleLogged(food)}>{!food.isLogged ? "Log" : "Remove"}</button>
+            <button onClick={() => toggleLogged(food)}>{!food.isLogged ? "Add to Log" : "Remove from log"}</button>
+            <br />
+            <button>Edit Food</button>
+            <br />
+            <button onClick={() => deleteItem(food)}>Delete Food</button>
             <br />
             <Link to='/foods'><button>Back to All Foods</button></Link>
         </Layout>

@@ -31,6 +31,7 @@ function Foods(props) {
         <Layout>
             <h2>All Foods:</h2>
             <ul>{allFoodsArr}</ul>
+            <button>Add Food</button>
             </Layout>
     </div>
   );
