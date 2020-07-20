@@ -7,6 +7,7 @@ function Welcome() {
     <div className="end-of-day">
         <Layout>
         <h1>Congratulations, you completed your log for the day.</h1>
+        <Link to={'/dash/'}><button>Return to Dashboard</button></Link>
         </Layout>
     </div>
   );
