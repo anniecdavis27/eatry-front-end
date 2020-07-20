@@ -10,6 +10,7 @@ import TheTeam from "./Components/TheTeam";
 import Food from "./Components/Food";
 import FoodCreate from "./Components/FoodCreate";
 import FoodEdit from "./Components/FoodEdit";
+import EndOfDay from './Components/EndOfDay'
 
 function App(props) {
   return (
@@ -23,6 +24,7 @@ function App(props) {
         <Route path="/team" component={TheTeam} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/create-food" component={FoodCreate} />
+        <Route path="/close-day" component={EndOfDay} />
         <Route path="/" component={Welcome} />
       </Switch>
     </div>

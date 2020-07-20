@@ -3,10 +3,12 @@ import Layout from "./Layout";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import { Link } from "react-router-dom";
+import SearchParams from "./SearchParams";
 
 function Foods(props) {
   console.log("Foods", props);
   const [foods, setFoods] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -20,7 +22,17 @@ function Foods(props) {
     makeAPICall();
   }, []);
 
-  const allFoodsArr = foods.map((item) => (
+  const handleChange = (event) => {
+    console.log(foods);
+    setSearchTerm(event.target.value);
+  };
+
+  console.log(searchTerm);
+  let searchFoods = foods.filter((item) => {
+    return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
+  let searchFoodsArr = searchFoods.map((item) => (
     <li key={item._id}>
       <Link to={`/foods/${item._id}`}>
         <h2>{item.name}</h2>
@@ -31,8 +43,9 @@ function Foods(props) {
   return (
     <div className="meal-log">
       <Layout>
+        <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
         <h2>All Foods:</h2>
-        <ul>{allFoodsArr}</ul>
+        <ul>{searchFoodsArr}</ul>
         <Link to={"/create-food"}>
           <button>Add Food</button>
         </Link>
