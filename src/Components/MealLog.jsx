@@ -27,12 +27,25 @@ function MealLog() {
     </li>
   ));
 
+  const endDayRevert = () => {
+    logged.map(item => (
+      axios({
+        url: `${apiUrl}/foods/${item._id}`,
+        method: "PUT",
+        data: { isLogged: false },
+      })
+    ))
+    
+    window.location.reload();
+    }
+
+
   return (
     <div className="meal-log">
       <Layout>
         <h2>Today: </h2>
         <ul>{loggedFoodsArr}</ul>
-        <Link><button>End Day</button></Link>
+        <Link><button onClick={endDayRevert}>End Day</button></Link>
       </Layout>
     </div>
   );
