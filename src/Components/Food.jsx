@@ -3,10 +3,9 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
-import PieChart from './PieChart'
+import PieChart from "./PieChart";
 
 const Work = (props) => {
-  console.log("Food", props);
   const [food, setFood] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
 
@@ -16,7 +15,6 @@ const Work = (props) => {
         const response = await axios(
           `${apiUrl}/foods/${props.match.params.id}`
         );
-        console.log("Item - response", response);
         setFood(response.data);
       } catch (err) {
         console.error(err);

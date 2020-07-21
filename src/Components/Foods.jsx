@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import SearchParams from "./SearchParams";
 
 function Foods(props) {
-  console.log("Foods", props);
   const [foods, setFoods] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -23,11 +22,9 @@ function Foods(props) {
   }, []);
 
   const handleChange = (event) => {
-    console.log(foods);
     setSearchTerm(event.target.value);
   };
 
-  console.log(searchTerm);
   let searchFoods = foods.filter((item) => {
     return item.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
