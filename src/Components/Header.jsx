@@ -8,16 +8,16 @@ function Welcome() {
       <h1>EATR.Y</h1>
       <ul className="nav">
         <Link to="/dash">
-          <li>Dashboard</li>
+          <li className='dash'>Dashboard</li>
         </Link>
         <Link to="/log">
-          <li>Meal Log</li>
+          <li className='log'>Meal Log</li>
         </Link>
         <Link to="/foods">
-          <li>All Foods</li>
+          <li className='food'>All Foods</li>
         </Link>
         <Link to="/team">
-          <li>The Team</li>
+          <li className='team'>The Team</li>
         </Link>
       </ul>
     </div>

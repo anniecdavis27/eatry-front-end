@@ -3,6 +3,7 @@ import axios from "axios";
 import FoodForm from "./FoodForm";
 import Layout from "./Layout";
 import apiUrl from "../apiConfig";
+import './FoodCreate.css'
 
 const FoodCreate = (props) => {
   console.log("ItemCreate props", props);
