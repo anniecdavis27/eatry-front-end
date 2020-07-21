@@ -1,3 +1,18 @@
 .endDay {
-    font-size: 25px;
+    color: #aa2020;
+     width: 170px;
+     height: 60px;
+     border-radius: 60px;
+     font-size: 25px;
+     font-weight: bold;
+     margin-top: 30px;
+}
+.yes, .no {
+     color: #aa2020;
+     width: 100px;
+     height: 30px;
+     border-radius: 60px;
+     font-size: 15px;
+     font-weight: bold;
+     margin-top: 30px;
 }

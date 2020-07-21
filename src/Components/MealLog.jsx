@@ -55,8 +55,8 @@ function MealLog() {
         {showModal ? (<Modal>
             <h1>Are you sure you would like end your day?</h1>
                 <div className="buttons">
-                <Link to={'/close-day'}><button onClick={endDayRevert}>Yes</button></Link>
-                <button onClick={toggleModal}>No</button>
+                <Link to={'/close-day'}><button onClick={endDayRevert} className='yes'>Yes</button></Link>
+                <button onClick={toggleModal} className='no'>No</button>
                 </div>
            </Modal>) : null}
       </Layout>

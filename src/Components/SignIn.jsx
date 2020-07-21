@@ -40,7 +40,7 @@ function SignIn() {
       <h1 className='signInh1'>EATR.Y</h1>
       <SignInForm handleChange={handleChange} handleSubmit={handleSubmit} />
       <button onClick={handleSubmit} className='enterButton'>Enter</button>
-      <h4>
+      <h4 className='error'>
         {navigate === false
           ? "the credentials you entered are incorrect, please try again."
           : ""}
