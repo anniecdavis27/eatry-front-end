@@ -4,7 +4,6 @@ import UserForm from "./UserForm";
 import axios from "axios";
 
 const Register = (props) => {
-  console.log("ItemCreate props", props);
   const [errors, setError] = useState(['error']);
   const [input, setInput] = useState({
     username: "",
@@ -15,7 +14,6 @@ const Register = (props) => {
   const [user, setUser] = useState(null);
 
   const handleChange = (event) => {
-    console.log("event", event.target.name, event.target.value);
     setInput({
       ...input,
       [event.target.name]: event.target.value,
@@ -24,7 +22,6 @@ const Register = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("handleSubmit");
     axios({
       url: "http://localhost:4000/api/user/register",
       method: "POST",
@@ -33,12 +30,10 @@ const Register = (props) => {
       .then((res) => {
         setUser({ createdItem: res.data.user });
         props.history.push("/user/register");
-        console.log(res.data);
         setError(res.data);
       })
       .catch(console.error);
   };
-  console.log("error", errors);
 
   let errorArray = []
 
@@ -55,8 +50,6 @@ const Register = (props) => {
     to={{ pathname: "/sign-in", state: { msg: "Registration Successful!" } }}
   /> )
   }
-   
-  console.log(errorArray)
 
   return (
     <>

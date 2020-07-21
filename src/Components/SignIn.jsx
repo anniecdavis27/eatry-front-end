@@ -4,8 +4,7 @@ import { Redirect } from "react-router-dom";
 import SignInForm from "../Components/SignInForm";
 
 function SignIn(props) {
-  const [input, setInput] = useState({username: "",
-  password: ""});
+  const [input, setInput] = useState({ username: "", password: "" });
   const [errors, setError] = useState([]);
   const [user, setUser] = useState(null);
 
@@ -19,7 +18,6 @@ function SignIn(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("handleSubmit");
     axios({
       url: "http://localhost:4000/api/user/login",
       method: "POST",
@@ -27,54 +25,34 @@ function SignIn(props) {
     })
       .then((res) => {
         setUser({ createdItem: res.data.user });
-        props.history.push("/login");
+        props.history.push("/sign-in");
         console.log(user);
-        //console.log(res.data.message);
         setError(res.data.message);
-
-        //setError(res.data);
       })
       .catch(console.error);
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   if (input.username === "acd27" && input.password === "password") {
-  //     isNavigate(true);
-  //   } else {
-  //     isNavigate(false);
-  //   }
-  // };
-
-  // if (navigate === true) {
-  //   return (
-  //     <Redirect
-  //       to={{
-  //         pathname: "/dash",
-  //         state: { msg: "You have successfully signed in!" },
-  //       }}
-  //     />
-  //   );
-  // }
-
   return (
     <div className="sign-in">
       <h1>EATR.Y</h1>
-      <SignInForm handleChange={handleChange} handleSubmit={handleSubmit} cancelPath="/"/>
+      <SignInForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        cancelPath="/"
+      />
       <button onClick={handleSubmit}>Enter</button>
       <h1>
-        {/* {errors.message} */}
         {errors.message === "Login Successful" ? (
-          <Redirect to="/dash" />
+          <Redirect
+            to={{
+              pathname: "/dash",
+              state: { msg: "You have signed in successfully" },
+            }}
+          />
         ) : (
           errors.message
         )}
       </h1>
-      {/* <h4>
-        {navigate === false
-          ? "the credentials you entered are incorrect, please try again."
-          : ""}
-      </h4> */}
     </div>
   );
 }
