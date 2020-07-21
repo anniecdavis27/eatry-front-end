@@ -40,7 +40,7 @@ function SignIn(props) {
         handleSubmit={handleSubmit}
         cancelPath="/"
       />
-      <button onClick={handleSubmit}>Enter</button>
+      
       <h1>
         {errors.message === "Login Successful" ? (
           <Redirect
