@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './FoodForm.css'
 
 function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
   return (
@@ -79,9 +80,9 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
         <br />
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <button className='submit' type="submit">Submit</button>
         <Link to={cancelPath}>
-          <button>Cancel</button>
+          <button className='cancel'>Cancel</button>
         </Link>
       </form>
     </div>

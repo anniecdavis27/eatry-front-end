@@ -18,8 +18,18 @@ li {
     background-color: #AA2021;
 }
 .addFood {
-    font-size: 20px;
+    color: #aa2020;
+     width: 170px;
+     height: 60px;
+     border-radius: 60px;
+     font-size: 20px;
+     font-weight: bold;
+     margin-top: 20px;
+
 }
 .list {
     margin-left: 0px;
+}
+input {
+    color: black;
 }

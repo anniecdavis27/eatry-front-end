@@ -5,6 +5,7 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import Modal from './Modal/Modal';
 import './Modal/Modal.css'
+import './MealLog.css'
 
 function MealLog() {
   const [logged, setLogged] = useState([]);
@@ -50,7 +51,7 @@ function MealLog() {
       <Layout>
         <h2>Today: </h2>
         <ul>{loggedFoodsArr}</ul>
-        <Link><button onClick={toggleModal}>End Day</button></Link>
+        <Link><button onClick={toggleModal} className='endDay'>End Day</button></Link>
         {showModal ? (<Modal>
             <h1>Are you sure you would like end your day?</h1>
                 <div className="buttons">

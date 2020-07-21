@@ -1,4 +1,4 @@
-h2 {
+.welcomeUser {
     font-size: 40px;
     color: #aa2020
 }
@@ -12,22 +12,4 @@ h3 {
     margin-right: 60px;
     text-align: center;
     color: #344861;
-}
-.calories {
-    color: #951F41;
-}
-.carbs {
-    color: red;
-}
-.protein {
-    color: #D17978;
-}
-.sodium{
-    color: #951F41;
-}
-.cholesterol {
-    color: red;
-}
-.potassium {
-    color: #D17978;
 }

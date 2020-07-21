@@ -7,7 +7,7 @@ function Welcome() {
     <div className="welcome">
       <h1 className='welcomeh1'>EATR.Y</h1>
       <Link to="/sign-in">
-        <button>Sign In</button>
+        <button className='signInButton'>Sign In</button>
       </Link>
     </div>
   );

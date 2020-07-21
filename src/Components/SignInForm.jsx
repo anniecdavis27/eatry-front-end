@@ -1,11 +1,12 @@
 import React from "react";
+import './SignInForm.css'
 // import { Link } from "react-router-dom";
 
 function SignInForm({ input, handleChange }) {
   return (
     <div className="sign-in-form">
       <form>
-        <label>Username: </label>
+        <label className='username'>Username: </label>
         <input
           placeholder="Enter your username"
           type="text"
@@ -15,7 +16,7 @@ function SignInForm({ input, handleChange }) {
           required
         />
         <br />
-        <label>Password: </label>
+        <label className='pw'>Password: </label>
         <input
           placeholder="Enter your username"
           type="password"

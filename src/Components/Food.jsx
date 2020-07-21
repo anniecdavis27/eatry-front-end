@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
+import './Food.css'
 
 const Work = (props) => {
   console.log("Food", props);
@@ -76,26 +77,26 @@ const Work = (props) => {
   return (
     <>
       <Layout>
-        <h2>{name}</h2>
-        <h3>Calories: {calories}</h3>
-        <h3>Carbs: {carbs}g</h3>
-        <h3>Protein: {protein}g</h3>
-        <h3>Fat: {fat}g</h3>
-        <h3>Sodium: {sodium}mg</h3>
-        <h3>Cholesterol: {cholesterol}mg</h3>
-        <h3>Potassium: {potassium}mg</h3>
-        <button onClick={() => toggleLogged(food)}>
+        <h2 className='foodNameh2'>{name}</h2>
+        <h3 className='data'>Calories: {calories}</h3>
+        <h3 className='data'>Carbs: {carbs}g</h3>
+        <h3 className='data'>Protein: {protein}g</h3>
+        <h3 className='data'>Fat: {fat}g</h3>
+        <h3 className='data'>Sodium: {sodium}mg</h3>
+        <h3 className='data'>Cholesterol: {cholesterol}mg</h3>
+        <h3 className='data'>Potassium: {potassium}mg</h3>
+        <button onClick={() => toggleLogged(food)} className='crudButton'>
           {!food.isLogged ? "Add to Log" : "Remove from log"}
         </button>
         <br />
         <Link to={`/foods/${props.match.params.id}/edit`}>
-          <button>Edit Food</button>
+          <button className='crudButton'>Edit Food</button>
         </Link>
         <br />
-        <button onClick={() => deleteItem(food)}>Delete Food</button>
+        <button onClick={() => deleteItem(food)} className='crudButton'>Delete Food</button>
         <br />
         <Link to="/foods">
-          <button>Back to All Foods</button>
+          <button className='crudButton'>Back to All Foods</button>
         </Link>
       </Layout>
     </>

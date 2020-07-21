@@ -10,3 +10,12 @@
     font-size: 60px;
     color: white;
 }
+.signInButton {
+    color: #aa2020;
+     width: 170px;
+     height: 60px;
+     border-radius: 60px;
+     font-size: 30px;
+     font-weight: bold;
+     margin-top: 30px;
+}

@@ -67,15 +67,15 @@ function Dash() {
   return (
     <div className="App">
       <Layout>
-        <h2>Welcome, USER.</h2>
+        <h2 className='welcomeUser'>Welcome, USER.</h2>
         <h3 className='nutritionalBreakdown'>Your nutritional Breakdown so far:</h3>
-        <h3 className='calories'>Total Calories: {totCals}</h3>
-        <h3 className='carbs'>Carbs: {totCarb}g</h3>
-        <h3 className='protein'>Protein: {totPro}g</h3>
-        <h3 className='fat'>Fat: {totFat}g</h3>
-        <h3 className='sodium'>Sodium: {totSod}mg</h3>
-        <h3 className='cholesterol'>Cholesterol: {totChol}mg</h3>
-        <h3 className='potassium'>Potassium: {totPot}mg</h3>
+        <h3 className='data'>Total Calories: {totCals}</h3>
+        <h3 className='data'>Carbs: {totCarb}g</h3>
+        <h3 className='data'>Protein: {totPro}g</h3>
+        <h3 className='data'>Fat: {totFat}g</h3>
+        <h3 className='data'>Sodium: {totSod}mg</h3>
+        <h3 className='data'>Cholesterol: {totChol}mg</h3>
+        <h3 className='data'>Potassium: {totPot}mg</h3>
       </Layout>
     </div>
   );
