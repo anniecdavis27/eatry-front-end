@@ -7,13 +7,17 @@ h2 {
     font-size: 24px;
     text-align: left;
     list-style-type: disc;
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    color: white;
+    text-align: center;
 }
 li {
-    border: solid black 3px;
+    border: solid #AA2021 1px;
     margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: #AA2021;
 }
-button {
+.addFood {
     font-size: 20px;
 }
 .list {

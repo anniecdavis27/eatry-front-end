@@ -5,7 +5,7 @@ import './Header.css'
 function Welcome() {
   return (
     <div className="header">
-      <h1>EATR.Y</h1>
+      <h1 className='headerh1'>EATR.Y</h1>
       <ul className="nav">
         <Link to="/dash">
           <li className='dash'>Dashboard</li>

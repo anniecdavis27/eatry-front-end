@@ -37,7 +37,7 @@ function SignIn() {
 
   return (
     <div className="sign-in">
-      <h1>EATR.Y</h1>
+      <h1 className='signInh1'>EATR.Y</h1>
       <SignInForm handleChange={handleChange} handleSubmit={handleSubmit} />
       <button onClick={handleSubmit}>Enter</button>
       <h4>

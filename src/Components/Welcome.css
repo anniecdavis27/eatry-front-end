@@ -1,7 +1,12 @@
 .welcome {
     background-color: #aa2020;
     color: white;
-    margin-top: 150px;
+    padding-top: 150px;
+    padding-bottom: 60vh;
     font-size: 60px;
     font-family: 'Roboto', sans-serif;
+}
+.welcomeh1 {
+    font-size: 60px;
+    color: white;
 }
