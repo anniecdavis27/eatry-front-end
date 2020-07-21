@@ -1,0 +1,21 @@
+.foods {
+    font-size: 40px;
+    color: #951F41;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    text-align: left;
+    list-style-type: disc;
+    margin-left: 10px;
+}
+li {
+    border: solid black 3px;
+    margin-bottom: 10px;
+}
+button {
+    font-size: 20px;
+}
+.list {
+    margin-left: 0px;
+}

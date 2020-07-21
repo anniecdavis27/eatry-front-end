@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import { Link } from "react-router-dom";
+import './Foods.css'
 
 function Foods(props) {
   console.log("Foods", props);
@@ -31,8 +32,8 @@ function Foods(props) {
   return (
     <div className="meal-log">
       <Layout>
-        <h2>All Foods:</h2>
-        <ul>{allFoodsArr}</ul>
+        <h2 className='foods'>All Foods:</h2>
+        <ul className='list'>{allFoodsArr}</ul>
         <Link to={"/create-food"}>
           <button>Add Food</button>
         </Link>
