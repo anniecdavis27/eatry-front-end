@@ -8,6 +8,8 @@ function Welcome() {
       <Link to="/sign-in">
         <button>Sign In</button>
       </Link>
+
+      <h5>Don't have an account yet? <Link to="/user/register">Register here!</Link></h5>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function SignInForm({ input, handleChange }) {
+function SignInForm({ input, handleChange, cancelPath }) {
   return (
     <div className="sign-in-form">
       <form>
@@ -24,6 +24,9 @@ function SignInForm({ input, handleChange }) {
           onChange={handleChange}
           required
         />
+        <Link to={cancelPath}>
+        <button>Cancel</button>
+      </Link>
       </form>
     </div>
   );

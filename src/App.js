@@ -11,11 +11,13 @@ import Food from "./Components/Food";
 import FoodCreate from "./Components/FoodCreate";
 import FoodEdit from "./Components/FoodEdit";
 import EndOfDay from './Components/EndOfDay'
+import Register from './Components/Register'
 
 function App(props) {
   return (
     <div className="App">
       <Switch>
+      <Route path="/user/register" component={Register} />
         <Route path="/dash" component={Dash} />
         <Route path="/log" component={MealLog} />
         <Route path="/foods/:id/edit" component={FoodEdit} />
