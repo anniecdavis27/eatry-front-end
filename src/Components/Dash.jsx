@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 import Layout from "./Layout";
+import PieChart from './PieChart'
 
 function Dash() {
 
@@ -68,6 +69,7 @@ function Dash() {
       <Layout>
         <h2>Welcome, USER.</h2>
         <h3>Your nutritional Breakdown so far:</h3>
+        {totCals > 0 ? <PieChart totalFat={totFat} totalCarbs={totCarb} totalProtein={totPro} /> : null}
         <h3>Total Calories: {totCals}</h3>
         <h3>Carbs: {totCarb}g</h3>
         <h3>Protein: {totPro}g</h3>
