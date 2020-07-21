@@ -1,3 +1,23 @@
-li {
-    color: green;
+.nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+} 
+h1 {
+    color: white;
+    font-size: 20px;
+} 
+.header {
+    display: flex;
+    background-color: #aa2020;
 }
+li {
+   color: white;
+}
+a {
+    text-decoration: none;
+    margin-right: 5px;
+}
+a:hover {
+    text-decoration: underline white;
+} 
