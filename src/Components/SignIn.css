@@ -12,8 +12,8 @@
     text-align: center;
     font-size: 80px;
     color: white;
-    /* padding-top: 20vh; */
-    
+    margin-block-start: .15em;
+    padding-top: 60px;
  }
  label {
      font-size: 40px;
@@ -26,7 +26,7 @@
      font-size: 20px;
      color: white;
  }
- .enterButton {
+ .enterButton, .cancelButton {
      color: #aa2020;
      width: 170px;
      height: 60px;
@@ -34,9 +34,11 @@
      font-size: 30px;
      font-weight: bold;
      margin-top: 30px;
+     align-items: center;
      /* margin-bottom: 60vh; */
  }
  .error {
      font-size: 20px;
      color: white;
  }
+ 

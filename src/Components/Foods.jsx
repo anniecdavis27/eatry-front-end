@@ -45,8 +45,8 @@ function Foods(props) {
     <div className="meal-log">
       <Layout>
         <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
-        <h2>All Foods:</h2>
-        <ul>{searchFoodsArr}</ul>
+        <h2 className='allFoods'>All Foods:</h2>
+        <ul className='ulFood'>{searchFoodsArr}</ul>
         <Link to={"/create-food"}>
           <button className='addFood'>Add Food</button>
         </Link>

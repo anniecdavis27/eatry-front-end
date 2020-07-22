@@ -17,7 +17,7 @@ function Welcome() {
           <li className='food'>All Foods</li>
         </Link>
         <Link to="/team">
-          <li className='team'>The Team</li>
+          <li className='theTeam'>The Team</li>
         </Link>
       </ul>
     </div>

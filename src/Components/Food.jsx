@@ -25,8 +25,6 @@ const Work = (props) => {
     makeAPICall();
   }, [props.match.params.id]);
 
-  console.log(food);
-
   const toggleLogged = (food) => {
     if (food.isLogged === false) {
       axios({
@@ -63,7 +61,6 @@ const Work = (props) => {
   if (!food) {
     return <p>...loading</p>;
   }
-  console.log(food.isLogged);
 
   const name = food.name;
   const calories = food.calories;

@@ -21,8 +21,9 @@ a {
 a:hover {
     text-decoration: underline white;
 } 
-.dash, .log, .food, .team {
+.dash, .log, .food, .theTeam {
     border: none;
+    color: white;
 }
 .headerh1 {
     color: white;

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Redirect } from "react-router-dom";
 import SignInForm from "../Components/SignInForm";
 import './SignIn.css'
 
-function SignIn() {
-  const [input, setInput] = useState({});
-  const [navigate, isNavigate] = useState();
+function SignIn(props) {
+  const [input, setInput] = useState({ username: "", password: "" });
+  const [errors, setError] = useState([]);
+  const [user, setUser] = useState(null);
 
   const handleChange = (event) => {
     console.log("event", event.target.name, event.target.value);
@@ -17,34 +19,41 @@ function SignIn() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (input.username === "acd27" && input.password === "password") {
-      isNavigate(true);
-    } else {
-      isNavigate(false);
-    }
+    axios({
+      url: "http://localhost:4000/api/user/login",
+      method: "POST",
+      data: input,
+    })
+      .then((res) => {
+        setUser({ createdItem: res.data.user });
+        props.history.push("/sign-in");
+        console.log(user);
+        setError(res.data.message);
+      })
+      .catch(console.error);
   };
-
-  if (navigate === true) {
-    return (
-      <Redirect
-        to={{
-          pathname: "/dash",
-          state: { msg: "You have successfully signed in!" },
-        }}
-      />
-    );
-  }
 
   return (
     <div className="sign-in">
       <h1 className='signInh1'>EATR.Y</h1>
-      <SignInForm handleChange={handleChange} handleSubmit={handleSubmit} />
+      <SignInForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        cancelPath="/"
+      />
       <button onClick={handleSubmit} className='enterButton'>Enter</button>
-      <h4 className='error'>
-        {navigate === false
-          ? "the credentials you entered are incorrect, please try again."
-          : ""}
-      </h4>
+      <h1>
+        {errors.message === "Login Successful" ? (
+          <Redirect
+            to={{
+              pathname: "/dash",
+              state: { msg: "You have signed in successfully" },
+            }}
+          />
+        ) : (
+          errors.message
+        )}
+      </h1>
     </div>
   );
 }

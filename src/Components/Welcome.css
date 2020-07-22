@@ -2,9 +2,11 @@
     background-color: #aa2020;
     color: white;
     padding-top: 150px;
-    padding-bottom: 60vh;
+    padding-bottom: 46vh;
     font-size: 60px;
     font-family: 'Roboto', sans-serif;
+    margin-block-end: .15em;
+    margin-block-start: .15em;
 }
 .welcomeh1 {
     font-size: 60px;
@@ -18,4 +20,9 @@
      font-size: 30px;
      font-weight: bold;
      margin-top: 30px;
+}
+h5 {
+    font-size: 25px;
+    position: relative;
+    top: 260px;
 }
