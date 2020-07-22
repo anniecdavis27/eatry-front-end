@@ -16,3 +16,13 @@
      font-weight: bold;
      margin-top: 30px;
 }
+.foodArray {
+     padding-right: 40px
+}
+.today {
+     color: #aa2020;
+     margin-top:30px;
+     font-size: 40px;
+     text-align: left;
+     padding-left: 60px;
+}

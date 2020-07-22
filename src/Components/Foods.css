@@ -27,6 +27,7 @@ li {
      font-size: 20px;
      font-weight: bold;
      margin-top: 20px;
+     margin-bottom: 20px;
 
 }
 .allFoods {
@@ -40,13 +41,18 @@ input {
     color: black;
 }
 #foods {
-    width: 300px;
+    width: 60vw;
     height: 40px;
     border-radius: 10px;
+    margin-bottom: 2em;
 }
 .filterLabel {
-    margin-right: 100px;
+    margin-left: 0em;
+    color: #aa2020;
 }
 .ulFood {
     padding: 0px 40px 0px 40px;
+}
+.piechart {
+    height: 40vh;
 }

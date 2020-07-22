@@ -49,8 +49,8 @@ function MealLog() {
   return (
     <div className="meal-log">
       <Layout>
-        <h2>Today: </h2>
-        <ul>{loggedFoodsArr}</ul>
+        <h2 className='today'>Today: </h2>
+        <ul className='foodArray'>{loggedFoodsArr}</ul>
         <Link><button onClick={toggleModal} className='endDay'>End Day</button></Link>
         {showModal ? (<Modal>
             <h1>Are you sure you would like end your day?</h1>
