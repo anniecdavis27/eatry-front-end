@@ -18,7 +18,33 @@
     text-decoration: none;
     color: inherit;
 }
-
+.nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+} 
+h1 {
+    color: white;
+} 
+.header {
+    display: flex;
+    background-color: #aa2020;
+    width: 100%;
+}
+li {
+   color: white;
+}
+a {
+    text-decoration: none;
+    margin-right: 5px;
+}
+a:hover {
+    text-decoration: underline white;
+} 
+.dash, .log, .food, .theTeam {
+    border: none;
+    color: white;
+}
 .nav-items {
     visibility: hidden;
     width: 0px;
@@ -104,11 +130,33 @@
     font-size: 25px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white; 
+    border-radius: 90px; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #aa2020;
+    border-radius: 90px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: white; 
+  }
+
 /* .nav-link:hover {
     color: #ffbb00;
 } */
 
-@media(hover: hover) and (pointer: fine) {
+
+/* @media(hover: hover) and (pointer: fine) {
     .navflex {
         justify-content: flex-start;
         align-items: center;
@@ -144,35 +192,5 @@
         visibility: hidden;
         height: 0px;
     }
-}
+} */
 
-
-
-
-.nav {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-} 
-h1 {
-    color: white;
-} 
-.header {
-    display: flex;
-    background-color: #aa2020;
-    width: 100%;
-}
-li {
-   color: white;
-}
-a {
-    text-decoration: none;
-    margin-right: 5px;
-}
-a:hover {
-    text-decoration: underline white;
-} 
-.dash, .log, .food, .theTeam {
-    border: none;
-    color: white;
-}
