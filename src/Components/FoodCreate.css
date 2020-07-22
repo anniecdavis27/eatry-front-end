@@ -1,7 +1,7 @@
-label {
+.createLabel {
     color: #951F41;
     font-size: 28px;
-    text-align: justify;
+    text-align: left;
 }
 form {
     text-align: left;

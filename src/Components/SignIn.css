@@ -3,7 +3,8 @@
 
  .sign-in {
      background: #aa2020;
-     padding-bottom: 20vh;
+     padding-bottom: 40vh;
+     padding-right: 20px;
      font-size: 60px;
      font-family: 'Roboto', sans-serif;
  }
@@ -12,11 +13,11 @@
     text-align: center;
     font-size: 80px;
     color: white;
-    margin-block-start: .15em;
-    padding-top: 60px;
+    margin-block-start: 0em;
+    padding-top: 200px;
  }
  label {
-     font-size: 40px;
+     font-size: 35px;
      color: white;
  }
  input {
@@ -28,13 +29,14 @@
  }
  .enterButton, .cancelButton {
      color: #aa2020;
-     width: 170px;
-     height: 60px;
+     width: 120px;
+     height: 40px;
      border-radius: 60px;
-     font-size: 30px;
+     font-size: 20px;
      font-weight: bold;
      margin-top: 30px;
      align-items: center;
+     margin-left: 20px;
      /* margin-bottom: 60vh; */
  }
  .error {

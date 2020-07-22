@@ -41,7 +41,7 @@ function SignIn(props) {
         handleSubmit={handleSubmit}
         cancelPath="/"
       />
-      <button onClick={handleSubmit} className='enterButton'>Enter</button>
+      
       <h1>
         {errors.message === "Login Successful" ? (
           <Redirect

@@ -1,13 +1,13 @@
 .register {
     font-size: 45px;
-    color:white;
+    color:#aa2020;
     margin-top: 70px;
     padding-top: 30px;
 }
 .home, .login {
     font-size: 20px; 
     font-weight: bolder;
-    color: white;
+    color: #aa2020;
 }
 .regsubmit, .regcancel {
     color: #aa2020;
@@ -19,7 +19,8 @@
      margin-left: 10px;
      margin-top: 30px
 }
-.box {
+/* .box {
+    border: solid black 2px;
     border-radius: 60px;
     width: 65vw;
     height: 75vh;
@@ -27,10 +28,10 @@
     align-items: center;
     background-color: #aa2020;
 
-}
+} */
 .regLabel {
     font-size: 20px;
-    color: white;
+    color: #aa2020;
 }
 form {
     text-align: center;

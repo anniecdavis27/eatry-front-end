@@ -6,7 +6,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
   return (
     <div className="sign-in-form">
       <form onSubmit={handleSubmit}>
-        <label>Name: </label>
+        <label className='createLabel'>Name: </label>
         <input
           placeholder="add food name"
           type="text"
@@ -15,7 +15,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
         />
         <br />
-        <label>Calories: </label>
+        <label className='createLabel'>Calories: </label>
         <input
           placeholder="add calories"
           type="text"
@@ -24,7 +24,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
         />
         <br />
-        <label>Carbs: </label>
+        <label className='createLabel'>Carbs: </label>
         <input
           placeholder="add carbs"
           type="text"
@@ -33,7 +33,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
         />
         <br />
-        <label>Protein: </label>
+        <label className='createLabel'>Protein: </label>
         <input
           placeholder="add protein"
           type="text"
@@ -42,7 +42,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
         />
         <br />
-        <label>Fat: </label>
+        <label className='createLabel'>Fat: </label>
         <input
           placeholder="add fat"
           type="text"
@@ -51,7 +51,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
         />
         <br />
-        <label>Sodium: </label>
+        <label className='createLabel'>Sodium: </label>
         <input
           placeholder="add sodium"
           type="text"
@@ -60,7 +60,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
         />
         <br />
-        <label>Cholesterol: </label>
+        <label className='createLabel'>Cholesterol: </label>
         <input
           placeholder="add cholesterol"
           type="text"
@@ -69,7 +69,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
         />
         <br />
-        <label>Potassium: </label>
+        <label className='createLabel'>Potassium: </label>
         <input
           placeholder="add potassium"
           type="text"

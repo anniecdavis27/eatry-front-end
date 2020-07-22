@@ -4,9 +4,9 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
 import './Food.css'
+import PieChart from "./PieChart";
 
 const Work = (props) => {
-  console.log("Food", props);
   const [food, setFood] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
 
@@ -16,7 +16,6 @@ const Work = (props) => {
         const response = await axios(
           `${apiUrl}/foods/${props.match.params.id}`
         );
-        console.log("Item - response", response);
         setFood(response.data);
       } catch (err) {
         console.error(err);
@@ -74,14 +73,15 @@ const Work = (props) => {
   return (
     <>
       <Layout>
-        <h2 className='foodNameh2'>{name}</h2>
-        <h3 className='data'>Calories: {calories}</h3>
-        <h3 className='data'>Carbs: {carbs}g</h3>
-        <h3 className='data'>Protein: {protein}g</h3>
-        <h3 className='data'>Fat: {fat}g</h3>
-        <h3 className='data'>Sodium: {sodium}mg</h3>
-        <h3 className='data'>Cholesterol: {cholesterol}mg</h3>
-        <h3 className='data'>Potassium: {potassium}mg</h3>
+        <h2>{name}</h2>
+        <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
+        <h3>Calories: {calories}</h3>
+        <h3>Carbs: {carbs}g</h3>
+        <h3>Protein: {protein}g</h3>
+        <h3>Fat: {fat}g</h3>
+        <h3>Sodium: {sodium}mg</h3>
+        <h3>Cholesterol: {cholesterol}mg</h3>
+        <h3>Potassium: {potassium}mg</h3>
         <button onClick={() => toggleLogged(food)} className='crudButton'>
           {!food.isLogged ? "Add to Log" : "Remove from log"}
         </button>

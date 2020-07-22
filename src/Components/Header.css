@@ -155,6 +155,7 @@ h1 {
 .header {
     display: flex;
     background-color: #aa2020;
+    width: 100%;
 }
 li {
    color: white;

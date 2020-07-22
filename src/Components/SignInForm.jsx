@@ -4,7 +4,7 @@ import './SignInForm.css'
 // import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function SignInForm({ input, handleChange, cancelPath }) {
+function SignInForm({ input, handleChange, handleSubmit, cancelPath }) {
   return (
     <div className="sign-in-form">
       <form>
@@ -27,6 +27,7 @@ function SignInForm({ input, handleChange, cancelPath }) {
           onChange={handleChange}
           required
         /><br />
+        <button onClick={handleSubmit} className='enterButton'>Enter</button>
         <Link to={cancelPath}>
         <button className='cancelButton'>Cancel</button>
       </Link>
