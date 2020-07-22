@@ -62,13 +62,14 @@ const Register = (props) => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath="/"
-      />{" "}
+      />
+      {" "}
       <br />
       <Link to="/" className='home'>Home</Link>
       <br /> 
       <br />
       <Link to="/sign-in" className='login'> Login </Link>
-    </div>
+     </div>
   );
 };
 

@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Lexend+Zetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .header {
     display: flex;
@@ -8,7 +6,12 @@
     align-items: center;
     width: 100%;
     height: 75px;
-    border-bottom: 5px solid;
+    background-color: #aa2020;
+}
+.headerh1 {
+    color: white;
+    font-family: 'Bubbler One', sans-serif;
+    margin-left: 20px;
 }
 
 .nav {
@@ -39,7 +42,7 @@
 .hamburger-patty {
     width: 30px;
     height: 3px;
-    background-color: rgb(113, 187, 255);
+    background-color: white;
     transition: all .5 ease-in-out;
     cursor: pointer;
 }
@@ -50,7 +53,7 @@
     position: absolute;
     width: 30px;
     height: 3px; 
-    background-color: rgb(113, 187, 255);
+    background-color: white;
 }
 
 .hamburger-patty::before {
@@ -91,19 +94,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #000224a4;
-    height: 185px;
+    background-color: #aa2020;
+    height: 250px;
 }
 
 .nav-link {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-family: 'Roboto', sans-serif;
     font-size: 25px;
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
     color: #ffbb00;
-}
+} */
 
 @media(hover: hover) and (pointer: fine) {
     .navflex {
@@ -116,7 +119,7 @@
         width: 150px;
         text-align: center;
         height: 100%;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: 20px;
     }
 
@@ -141,7 +144,9 @@
         visibility: hidden;
         height: 0px;
     }
-} */
+}
+
+
 
 
 .nav {
@@ -150,7 +155,7 @@
     justify-content: space-around;
 } 
 h1 {
-    color: #aa2020;
+    color: white;
 } 
 .header {
     display: flex;
@@ -170,8 +175,4 @@ a:hover {
 .dash, .log, .food, .theTeam {
     border: none;
     color: white;
-}
-.headerh1 {
-    color: white;
-    font-family: 'Bubbler One', sans-serif;
 }
