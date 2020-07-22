@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../App";
+import { Link } from "react-router-dom";
 import Layout from "./Layout";
 
 function TheTeam() {
+
+  const username = useContext(DataContext);
+
+  console.log(username.username.length);
+
+  if (username.username.length > 1) {
   return (
     <div className="meal-log">
       <Layout>
@@ -79,6 +87,14 @@ function TheTeam() {
       </Layout>
     </div>
   );
+} else {
+  return (
+    <>
+    <h1>You must sign in.</h1>
+    <Link to='/sign-in'><h2>sign in</h2></Link>
+    </>
+  )
+}
 }
 
 export default TheTeam;

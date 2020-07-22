@@ -3,17 +3,21 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 import SignInForm from "../Components/SignInForm";
 
+
+
 function SignIn(props) {
   const [input, setInput] = useState({ username: "", password: "" });
   const [errors, setError] = useState([]);
   const [user, setUser] = useState(null);
+  const [username, setUsername] = useState(null)
 
   const handleChange = (event) => {
-    console.log("event", event.target.name, event.target.value);
     setInput({
       ...input,
       [event.target.name]: event.target.value,
     });
+    setUsername(input.username)
+    props.getUserName(username)
   };
 
   const handleSubmit = (event) => {
@@ -24,13 +28,14 @@ function SignIn(props) {
       data: input,
     })
       .then((res) => {
-        setUser({ createdItem: res.data.user });
+        setUser({ createdItem: res.data });
         props.history.push("/sign-in");
-        console.log(user);
         setError(res.data.message);
       })
       .catch(console.error);
   };
+
+  // console.log(user)
 
   return (
     <div className="sign-in">
