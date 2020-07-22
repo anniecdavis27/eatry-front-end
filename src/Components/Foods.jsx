@@ -27,15 +27,25 @@ function Foods(props) {
     makeAPICall();
   }, []);
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  console.log(foods)
 
-  let searchFoods = foods.filter((item) => {
-    return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  // const handleChange = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
 
-  let searchFoodsArr = searchFoods.map((item) => (
+  // let searchFoods = foods.filter((item) => {
+  //   return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+  // });
+
+  // let searchFoodsArr = searchFoods.map((item) => (
+  //   <li key={item._id}>
+  //     {/* <Link to={`/foods/${item._id}`}> */}
+  //       <h2>{item.name}</h2>
+  //     {/* </Link> */}
+  //   </li>
+  // ));
+
+   let searchFoodsArr = foods.map((item) => (
     <li key={item._id}>
       <Link to={`/foods/${item._id}`}>
         <h2>{item.name}</h2>
@@ -47,7 +57,7 @@ function Foods(props) {
   return (
     <div className="meal-log">
       <Layout>
-        <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
+        {/* <SearchParams searchTerm={searchTerm} handleChange={handleChange} /> */}
         <h2>All Foods:</h2>
         <ul>{searchFoodsArr}</ul>
         <Link to={"/create-food"}>

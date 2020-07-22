@@ -16,14 +16,14 @@ function Dash() {
   useEffect(() => {
     const makeAPICall = async () => {
       try {
-        const response = await axios(`${apiUrl}/foods/logged`);
-        setLogged(response.data);
+        const response = await axios(`${apiUrl}/user/${username.username}`);
+        setLogged(response.data[0].foods);
       } catch (err) {
         console.error(err);
       }
     };
     makeAPICall();
-  }, []);
+  }, [username.username]);
 
   const mapCals = logged.map((item) => {
     return item.calories;

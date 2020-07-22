@@ -9,6 +9,7 @@ import PieChart from "./PieChart";
 const Work = (props) => {
   const [food, setFood] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [user, setUser] = useState({})
 
   const username = useContext(DataContext);
 
@@ -28,21 +29,40 @@ const Work = (props) => {
     makeAPICall();
   }, [props.match.params.id]);
 
-  const toggleLogged = (food) => {
-    if (food.isLogged === false) {
-      axios({
-        url: `${apiUrl}/foods/${food._id}/`,
-        method: "PUT",
-        data: { isLogged: true },
-      });
-    } else if (food.isLogged === true) {
-      axios({
-        url: `${apiUrl}/foods/${food._id}/`,
-        method: "PUT",
-        data: { isLogged: false },
-      });
-    }
-    window.location.reload();
+  useEffect(() => {
+    const makeAPICall = async () => {
+      try {
+        const response = await axios(
+          `${apiUrl}/user/${username.username}`
+        );
+        setUser(response.data[0]);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    makeAPICall();
+  }, [username.username]);
+
+  console.log(user)
+if (!user) {
+  return <h2>...loading</h2>
+}
+  console.log(user._id)
+
+  const addToLogged = (food) => {
+    axios({
+          url: `${apiUrl}/user/add/${food._id}/${user._id}/`,
+          method: "PUT",
+          data: { food }
+        });
+  };
+
+  const removeFromLogged = (food) => {
+    axios({
+          url: `${apiUrl}/user/${user._id}/removeone/${food._id}/`,
+          method: "PUT",
+          data: { foods: [] }
+        });
   };
 
   const deleteItem = async (food) => {
@@ -87,9 +107,12 @@ const Work = (props) => {
           <h3>Sodium: {sodium}mg</h3>
           <h3>Cholesterol: {cholesterol}mg</h3>
           <h3>Potassium: {potassium}mg</h3>
-          <button onClick={() => toggleLogged(food)}>
-            {!food.isLogged ? "Add to Log" : "Remove from log"}
-          </button>
+          <Link to='/foods'><button onClick={() => addToLogged(food)}>
+          Add to Log
+          </button></Link>
+          <Link to='/foods'><button onClick={() => removeFromLogged(food)}>
+          Remove from Log
+          </button></Link>
           <br />
           <Link to={`/foods/${props.match.params.id}/edit`}>
             <button>Edit Food</button>
@@ -104,7 +127,8 @@ const Work = (props) => {
       </>
     );
   } else {
-    return <></>;
+    return <>
+    </>;
   }
 };
 
