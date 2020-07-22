@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { DataContext } from "../App";
 import { Link } from "react-router-dom";
 import Layout from "./Layout";
 import axios from "axios";
@@ -9,6 +10,10 @@ import './Modal/Modal.css'
 function MealLog() {
   const [logged, setLogged] = useState([]);
   const [showModal, setShowModal] = useState(false)
+
+  const username = useContext(DataContext);
+
+  console.log(username.username.length);
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -44,13 +49,13 @@ function MealLog() {
     ))
     }
 
-
+    if (username.username.length > 1) {
   return (
     <div className="meal-log">
       <Layout>
         <h2>Today: </h2>
         <ul>{loggedFoodsArr}</ul>
-        <Link><button onClick={toggleModal}>End Day</button></Link>
+        <button onClick={toggleModal}>End Day</button>
         {showModal ? (<Modal>
             <h1>Are you sure you would like end your day?</h1>
                 <div className="buttons">
@@ -61,6 +66,14 @@ function MealLog() {
       </Layout>
     </div>
   );
+  } else {
+  return (
+    <>
+    <h1>You must sign in.</h1>
+    <Link to='/sign-in'><h2>sign in</h2></Link>
+    </>
+  )
+}
 }
 
 export default MealLog;

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { DataContext } from "../App";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
@@ -6,6 +8,10 @@ import PieChart from "./PieChart";
 
 function Dash() {
   const [logged, setLogged] = useState([]);
+
+  const username = useContext(DataContext);
+
+  console.log(username.username.length);
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -61,28 +67,37 @@ function Dash() {
 
   const totPot = mapPot.reduce((a, b) => a + b, 0);
 
-  return (
-    <div className="App">
-      <Layout>
-        <h2>Welcome, USER.</h2>
-        <h3>Your nutritional Breakdown so far:</h3>
-        {totCals > 0 ? (
-          <PieChart
-            totalFat={totFat}
-            totalCarbs={totCarb}
-            totalProtein={totPro}
-          />
-        ) : null}
-        <h3>Total Calories: {totCals}</h3>
-        <h3>Carbs: {totCarb}g</h3>
-        <h3>Protein: {totPro}g</h3>
-        <h3>Fat: {totFat}g</h3>
-        <h3>Sodium: {totSod}mg</h3>
-        <h3>Cholesterol: {totChol}mg</h3>
-        <h3>Potassium: {totPot}mg</h3>
-      </Layout>
-    </div>
-  );
+  if (username.username.length > 1) {
+    return (
+      <div className="App">
+        <Layout>
+          <h2>Welcome, USER.</h2>
+          <h3>Your nutritional Breakdown so far:</h3>
+          {totCals > 0 ? (
+            <PieChart
+              totalFat={totFat}
+              totalCarbs={totCarb}
+              totalProtein={totPro}
+            />
+          ) : null}
+          <h3>Total Calories: {totCals}</h3>
+          <h3>Carbs: {totCarb}g</h3>
+          <h3>Protein: {totPro}g</h3>
+          <h3>Fat: {totFat}g</h3>
+          <h3>Sodium: {totSod}mg</h3>
+          <h3>Cholesterol: {totChol}mg</h3>
+          <h3>Potassium: {totPot}mg</h3>
+        </Layout>
+      </div>
+    );
+  } else {
+    return (
+      <>
+      <h1>You must sign in.</h1>
+      <Link to='/sign-in'><h2>sign in</h2></Link>
+      </>
+    )
+  }
 }
 
 export default Dash;

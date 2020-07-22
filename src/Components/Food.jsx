@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { DataContext } from "../App";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
@@ -8,6 +9,10 @@ import PieChart from "./PieChart";
 const Work = (props) => {
   const [food, setFood] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
+
+  const username = useContext(DataContext);
+
+  console.log(username.username.length);
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -69,34 +74,38 @@ const Work = (props) => {
   const potassium = food.potassium;
   const sodium = food.sodium;
 
-  return (
-    <>
-      <Layout>
-        <h2>{name}</h2>
-        <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
-        <h3>Calories: {calories}</h3>
-        <h3>Carbs: {carbs}g</h3>
-        <h3>Protein: {protein}g</h3>
-        <h3>Fat: {fat}g</h3>
-        <h3>Sodium: {sodium}mg</h3>
-        <h3>Cholesterol: {cholesterol}mg</h3>
-        <h3>Potassium: {potassium}mg</h3>
-        <button onClick={() => toggleLogged(food)}>
-          {!food.isLogged ? "Add to Log" : "Remove from log"}
-        </button>
-        <br />
-        <Link to={`/foods/${props.match.params.id}/edit`}>
-          <button>Edit Food</button>
-        </Link>
-        <br />
-        <button onClick={() => deleteItem(food)}>Delete Food</button>
-        <br />
-        <Link to="/foods">
-          <button>Back to All Foods</button>
-        </Link>
-      </Layout>
-    </>
-  );
+  if (username.username.length > 1) {
+    return (
+      <>
+        <Layout>
+          <h2>{name}</h2>
+          <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
+          <h3>Calories: {calories}</h3>
+          <h3>Carbs: {carbs}g</h3>
+          <h3>Protein: {protein}g</h3>
+          <h3>Fat: {fat}g</h3>
+          <h3>Sodium: {sodium}mg</h3>
+          <h3>Cholesterol: {cholesterol}mg</h3>
+          <h3>Potassium: {potassium}mg</h3>
+          <button onClick={() => toggleLogged(food)}>
+            {!food.isLogged ? "Add to Log" : "Remove from log"}
+          </button>
+          <br />
+          <Link to={`/foods/${props.match.params.id}/edit`}>
+            <button>Edit Food</button>
+          </Link>
+          <br />
+          <button onClick={() => deleteItem(food)}>Delete Food</button>
+          <br />
+          <Link to="/foods">
+            <button>Back to All Foods</button>
+          </Link>
+        </Layout>
+      </>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default Work;
