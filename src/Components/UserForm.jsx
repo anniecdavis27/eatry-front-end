@@ -6,7 +6,7 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>UserName: </label>
+      <label className='regLabel'>UserName: </label><br />
       <input
         placeholder="username"
         value={user.username}
@@ -14,7 +14,7 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => {
         onChange={handleChange}
       />
       <br />
-      <label>Email: </label>
+      <label className='regLabel'>Email: </label><br />
       <input
         placeholder="email"
         value={user.email}
@@ -22,7 +22,7 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => {
         onChange={handleChange}
       />
       <br />
-      <label>Password: </label>
+      <label className='regLabel'>Password: </label><br />
       <input
         placeholder="password"
         value={user.password}
@@ -30,13 +30,13 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => {
         onChange={handleChange}
       />
       <br />
-      <label>Confirm Password: </label>
+      <label className='regLabel'>Confirm Password: </label><br />
       <input
         placeholder="confirm password"
         value={user.password2}
         name="password2"
         onChange={handleChange}
-      />
+      /><br />
 
       <button type="submit" className='regsubmit'>Submit</button>
       <Link to={cancelPath}>

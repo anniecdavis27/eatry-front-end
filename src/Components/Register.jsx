@@ -54,7 +54,7 @@ const Register = (props) => {
   }
 
   return (
-    <>
+    <div className='box'>
       <h1 className='register'>Register</h1>
       {errorArray}
       <UserForm
@@ -68,7 +68,7 @@ const Register = (props) => {
       <br /> 
       <br />
       <Link to="/sign-in" className='login'> Login </Link>
-    </>
+    </div>
   );
 };
 
