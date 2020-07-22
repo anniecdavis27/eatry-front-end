@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { DataContext } from "../App";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
@@ -8,17 +10,21 @@ import './Dash.css'
 function Dash() {
   const [logged, setLogged] = useState([]);
 
+  const username = useContext(DataContext);
+
+  console.log(username.username.length);
+
   useEffect(() => {
     const makeAPICall = async () => {
       try {
-        const response = await axios(`${apiUrl}/foods/logged`);
-        setLogged(response.data);
+        const response = await axios(`${apiUrl}/user/${username.username}`);
+        setLogged(response.data[0].foods);
       } catch (err) {
         console.error(err);
       }
     };
     makeAPICall();
-  }, []);
+  }, [username.username]);
 
   const mapCals = logged.map((item) => {
     return item.calories;
@@ -62,28 +68,39 @@ function Dash() {
 
   const totPot = mapPot.reduce((a, b) => a + b, 0);
 
-  return (
-    <div className="App">
-      <Layout>
-        <h2 className='welcomeUser'>Welcome, USER.</h2>
-        <h3 className='nutritionalBreakdown'>Your nutritional Breakdown so far:</h3>
-        {totCals > 0 ? (
-          <PieChart
-            totalFat={totFat}
-            totalCarbs={totCarb}
-            totalProtein={totPro}
-          />
-        ) : null}
-        <h3 className='totCals'>Total Calories: {totCals}</h3>
-        <h3 className='breakdowns'>Carbs: {totCarb}g</h3>
-        <h3 className='breakdowns'>Protein: {totPro}g</h3>
-        <h3 className='breakdowns'>Fat: {totFat}g</h3>
-        <h3 className='breakdowns'>Sodium: {totSod}mg</h3>
-        <h3 className='breakdowns'>Cholesterol: {totChol}mg</h3>
-        <h3 className='breakdowns'>Potassium: {totPot}mg</h3>
-      </Layout>
-    </div>
-  );
+
+  if (username.username.length > 1) {
+    return (
+      <div className="App">
+        <Layout>
+          <h2 className='welcomeUser'>Welcome, USER.</h2>
+          <h3 className='nutritionalBreakdown'>Your nutritional Breakdown so far:</h3>
+          {totCals > 0 ? (
+            <PieChart
+              totalFat={totFat}
+              totalCarbs={totCarb}
+              totalProtein={totPro}
+            />
+          ) : null}
+          <h3 className='totCals'>Total Calories: {totCals}</h3>
+          <h3 className='breakdowns'>Carbs: {totCarb}g</h3>
+          <h3 className='breakdowns'>Protein: {totPro}g</h3>
+          <h3 className='breakdowns'>Fat: {totFat}g</h3>
+          <h3 className='breakdowns'>Sodium: {totSod}mg</h3>
+          <h3 className='breakdowns'>Cholesterol: {totChol}mg</h3>
+          <h3 className='breakdowns'>Potassium: {totPot}mg</h3>
+        </Layout>
+      </div>
+    );
+  } else {
+    return (
+      <>
+      <h1>You must sign in.</h1>
+      <Link to='/sign-in'><h2>sign in</h2></Link>
+      </>
+    )
+  }
+
 }
 
 export default Dash;

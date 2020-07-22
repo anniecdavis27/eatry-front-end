@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Layout from "./Layout";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import { Link } from "react-router-dom";
 import SearchParams from "./SearchParams";
 import './Foods.css'
+import { DataContext } from "../App";
 
 function Foods(props) {
+
+  const username = useContext(DataContext);
+
+  console.log(username.username.length);
+
   const [foods, setFoods] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -22,15 +28,25 @@ function Foods(props) {
     makeAPICall();
   }, []);
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  console.log(foods)
 
-  let searchFoods = foods.filter((item) => {
-    return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  // const handleChange = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
 
-  let searchFoodsArr = searchFoods.map((item) => (
+  // let searchFoods = foods.filter((item) => {
+  //   return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+  // });
+
+  // let searchFoodsArr = searchFoods.map((item) => (
+  //   <li key={item._id}>
+  //     {/* <Link to={`/foods/${item._id}`}> */}
+  //       <h2>{item.name}</h2>
+  //     {/* </Link> */}
+  //   </li>
+  // ));
+
+   let searchFoodsArr = foods.map((item) => (
     <li key={item._id}>
       <Link to={`/foods/${item._id}`}>
         <h2>{item.name}</h2>
@@ -38,10 +54,11 @@ function Foods(props) {
     </li>
   ));
 
+  if (username.username.length > 1) {
   return (
     <div className="meal-log">
       <Layout>
-        <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
+        {/* <SearchParams searchTerm={searchTerm} handleChange={handleChange} /> */}
         <h2 className='allFoods'>All Foods:</h2>
         <ul className='ulFood'>{searchFoodsArr}</ul>
         <Link to={"/create-food"}>
@@ -49,7 +66,16 @@ function Foods(props) {
         </Link>
       </Layout>
     </div>
-  );
+  )
+} else {
+  return (
+    <>
+    <h1>You must sign in.</h1>
+    <Link to='/sign-in'><h2>sign in</h2></Link>
+    </>
+  )
+}
+
 }
 
 export default Foods;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { DataContext } from "../App";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
@@ -9,6 +10,11 @@ import PieChart from "./PieChart";
 const Work = (props) => {
   const [food, setFood] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [user, setUser] = useState({})
+
+  const username = useContext(DataContext);
+
+  console.log(username.username.length);
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -24,21 +30,40 @@ const Work = (props) => {
     makeAPICall();
   }, [props.match.params.id]);
 
-  const toggleLogged = (food) => {
-    if (food.isLogged === false) {
-      axios({
-        url: `${apiUrl}/foods/${food._id}/`,
-        method: "PUT",
-        data: { isLogged: true },
-      });
-    } else if (food.isLogged === true) {
-      axios({
-        url: `${apiUrl}/foods/${food._id}/`,
-        method: "PUT",
-        data: { isLogged: false },
-      });
-    }
-    window.location.reload();
+  useEffect(() => {
+    const makeAPICall = async () => {
+      try {
+        const response = await axios(
+          `${apiUrl}/user/${username.username}`
+        );
+        setUser(response.data[0]);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    makeAPICall();
+  }, [username.username]);
+
+  console.log(user)
+if (!user) {
+  return <h2>...loading</h2>
+}
+  console.log(user._id)
+
+  const addToLogged = (food) => {
+    axios({
+          url: `${apiUrl}/user/add/${food._id}/${user._id}/`,
+          method: "PUT",
+          data: { food }
+        });
+  };
+
+  const removeFromLogged = (food) => {
+    axios({
+          url: `${apiUrl}/user/${user._id}/removeone/${food._id}/`,
+          method: "PUT",
+          data: { foods: [] }
+        });
   };
 
   const deleteItem = async (food) => {
@@ -70,34 +95,42 @@ const Work = (props) => {
   const potassium = food.potassium;
   const sodium = food.sodium;
 
-  return (
-    <>
-      <Layout>
-        <h2>{name}</h2>
-        <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
-        <h3>Calories: {calories}</h3>
-        <h3>Carbs: {carbs}g</h3>
-        <h3>Protein: {protein}g</h3>
-        <h3>Fat: {fat}g</h3>
-        <h3>Sodium: {sodium}mg</h3>
-        <h3>Cholesterol: {cholesterol}mg</h3>
-        <h3>Potassium: {potassium}mg</h3>
-        <button onClick={() => toggleLogged(food)} className='crudButton'>
-          {!food.isLogged ? "Add to Log" : "Remove from log"}
-        </button>
-        <br />
-        <Link to={`/foods/${props.match.params.id}/edit`}>
-          <button className='crudButton'>Edit Food</button>
-        </Link>
-        <br />
-        <button onClick={() => deleteItem(food)} className='crudButton'>Delete Food</button>
-        <br />
-        <Link to="/foods">
-          <button className='crudButton'>Back to All Foods</button>
-        </Link>
-      </Layout>
-    </>
-  );
+  if (username.username.length > 1) {
+    return (
+      <>
+        <Layout>
+          <h2>{name}</h2>
+          <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
+          <h3>Calories: {calories}</h3>
+          <h3>Carbs: {carbs}g</h3>
+          <h3>Protein: {protein}g</h3>
+          <h3>Fat: {fat}g</h3>
+          <h3>Sodium: {sodium}mg</h3>
+          <h3>Cholesterol: {cholesterol}mg</h3>
+          <h3>Potassium: {potassium}mg</h3>
+          <Link to='/foods'><button onClick={() => addToLogged(food)} className='crudButton'>
+          Add to Log
+          </button></Link>
+          <Link to='/foods'><button onClick={() => removeFromLogged(food)} className='crudButton'>
+          Remove from Log
+          </button></Link>
+          <br />
+          <Link to={`/foods/${props.match.params.id}/edit`}>
+            <button className='crudButton'>Edit Food</button>
+          </Link>
+          <br />
+          <button onClick={() => deleteItem(food)} className='crudButton'>Delete Food</button>
+          <br />
+          <Link to="/foods">
+            <button className='crudButton'>Back to All Foods</button>
+          </Link>
+        </Layout>
+      </>
+    );
+  } else {
+    return <>
+    </>;
+  }
 };
 
 export default Work;

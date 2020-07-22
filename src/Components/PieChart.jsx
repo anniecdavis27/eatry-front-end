@@ -1,6 +1,5 @@
 import { Pie } from 'react-chartjs-2'
 import React, {Component} from 'react'
-import { render } from '@testing-library/react'
 
 class PieChartComponent extends Component {
     constructor(props) {
@@ -22,7 +21,6 @@ class PieChartComponent extends Component {
                     labels: this.state.labels,
                     datasets: this.state.datasets
                 }}
-                height='200px'
                 />
             </div>
         )
