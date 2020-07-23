@@ -2,6 +2,7 @@
     font-size: 40px;
     color: #951F41;
     text-align: center;
+    background-color: white;
 }
 h2 {
     font-size: 24px;
@@ -13,7 +14,6 @@ h2 {
 }
 li {
     margin-bottom: 10px;
-    /* margin-right: 30px; */
     border-radius: 20px;
     background-color: #AA2021;
     height: auto;
@@ -21,6 +21,8 @@ li {
 }
 .addFood {
     color: #aa2020;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
      width: 170px;
      height: 60px;
      border-radius: 60px;
@@ -88,7 +90,7 @@ input {
         margin-top: 6vh;
     }
     .foodStats {
-        color: green;
+        color: #aa2020;
     }
     
 }

@@ -6,9 +6,13 @@
      font-size: 25px;
      font-weight: bold;
      margin-top: 30px;
+     background-color: white;
+     font-family: 'Roboto', sans-serif;
 }
 .yes, .no {
      color: #aa2020;
+     background-color: white;
+     font-family: 'Roboto', sans-serif;
      width: 100px;
      height: 30px;
      border-radius: 60px;
@@ -17,7 +21,9 @@
      margin-top: 30px;
 }
 .yousure {
-     color: #aa2020
+     color: #aa2020;
+     background-color: white;
+     font-family: 'Roboto', sans-serif;
 }
 .foodArray {
      padding-right: 40px

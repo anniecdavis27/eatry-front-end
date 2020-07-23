@@ -1,11 +1,13 @@
 .crudButton {
      color: #aa2020;
      width: 150px;
-     height: 30px;
+     height: 40px;
      border-radius: 60px;
      font-size: 15px;
      font-weight: bold;
      margin-top: 10px;
+     background-color: white;
+     font-family: 'Roboto', sans-serif;
 }
 .foodNameh2 {
     color: #AA2021;
@@ -13,4 +15,7 @@
 }
 .data {
     color: #AA2021
+}
+.foodContainer {
+    display: flex;
 }

@@ -10,7 +10,7 @@ function TheTeam() {
 
   if (username.username.length > 1) {
   return (
-    <div className="meal-log">
+    <div className="team">
       <Layout>
         <h2 className='team'>Meet the Team: </h2>
           <div className='container'>
