@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import UserForm from "./UserForm";
 import axios from "axios";
 import './Register.css'
+import apiUrl from "../apiConfig";
 
 
 const Register = (props) => {
@@ -25,7 +26,7 @@ const Register = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios({
-      url: "http://localhost:4000/api/user/register",
+      url: `${apiUrl}/user/register`,
       method: "POST",
       data: input,
     })

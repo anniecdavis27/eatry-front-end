@@ -16,6 +16,7 @@ const FoodCreate = (props) => {
     sodium: "",
     cholesterol: "",
     potassium: "",
+    Link: "",
   });
   const [isUpdated, setIsUpdated] = useState(false);
 
@@ -33,7 +34,7 @@ const FoodCreate = (props) => {
       }
     };
     makeAPICall();
-  }, []);
+  }, [props.match.params.id]);
 
   const handleChange = (event) => {
     setItem({

@@ -73,6 +73,7 @@ p {
 }
 .name {
     text-align: center;
+    color: black;
 }
 .team-Member {
     border: solid black 2px;
@@ -82,7 +83,6 @@ p {
     min-width: 25vw;
     margin-left: 2em;
     margin-right: 2em;
-
 }
 .team {
     background-color: #aa2020;
@@ -93,5 +93,8 @@ p {
     max-width: 250px; 
 }
 .team-container {
-    color:
+    color: #aa2020;
+}
+p {
+    color: #aa2020;
 }

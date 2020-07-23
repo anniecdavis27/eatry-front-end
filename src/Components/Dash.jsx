@@ -5,14 +5,12 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
 import PieChart from "./PieChart";
-import './Dash.css'
+import "./Dash.css";
 
 function Dash() {
   const [logged, setLogged] = useState([]);
 
   const username = useContext(DataContext);
-
-  console.log(username.username.length);
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -68,15 +66,15 @@ function Dash() {
 
   const totPot = mapPot.reduce((a, b) => a + b, 0);
 
-
   if (username.username.length > 1) {
     return (
       <div className="App">
         <Layout>
-          <h2 className='welcomeUser'>Welcome, USER.</h2>
-          <h3 className='nutritionalBreakdown'>Your nutritional Breakdown so far:</h3>
-          
-          <div className='dashContainer'>
+          <h2 className="welcomeUser">Welcome, {username.username}.</h2>
+          <h3 className="nutritionalBreakdown">
+            Your nutritional Breakdown so far:
+          </h3>
+        <div className='dashContainer'>
           {totCals > 0 ? (
             <PieChart
               totalFat={totFat}
@@ -103,9 +101,8 @@ function Dash() {
       <h1 className='signIn'>You must sign in.</h1>
       <Link to='/sign-in'><h2 className='signInLink'>sign in</h2></Link>
       </>
-    )
+    );
   }
-
 }
 
 export default Dash;

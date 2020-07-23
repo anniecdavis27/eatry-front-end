@@ -8,8 +8,6 @@ function TheTeam() {
 
   const username = useContext(DataContext);
 
-  console.log(username.username.length);
-
   if (username.username.length > 1) {
   return (
     <div className="team">
