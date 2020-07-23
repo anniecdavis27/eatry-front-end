@@ -3,6 +3,7 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 import SignInForm from "../Components/SignInForm";
 import './SignIn.css'
+import apiUrl from "../apiConfig";
 
 
 
@@ -24,7 +25,7 @@ function SignIn(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios({
-      url: "http://localhost:4000/api/user/login",
+      url: `${apiUrl}/user/login`,
       method: "POST",
       data: input,
     })

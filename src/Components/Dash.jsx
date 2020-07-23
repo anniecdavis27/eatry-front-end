@@ -26,6 +26,8 @@ function Dash() {
     makeAPICall();
   }, [username.username]);
 
+  console.log(logged)
+
   const mapCals = logged.map((item) => {
     return item.calories;
   });
@@ -73,7 +75,7 @@ function Dash() {
     return (
       <div className="App">
         <Layout>
-          <h2 className='welcomeUser'>Welcome, USER.</h2>
+          <h2 className='welcomeUser'>Welcome, {username.username}.</h2>
           <h3 className='nutritionalBreakdown'>Your nutritional Breakdown so far:</h3>
           {totCals > 0 ? (
             <PieChart
