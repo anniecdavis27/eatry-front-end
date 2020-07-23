@@ -100,14 +100,18 @@ if (!user) {
       <>
         <Layout>
           <h2 className='foodItem'>{name}</h2>
+          <div className='foodsContainer'>
           <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
-          <h3>Calories: {calories}</h3>
-          <h3>Carbs: {carbs}g</h3>
-          <h3>Protein: {protein}g</h3>
-          <h3>Fat: {fat}g</h3>
-          <h3>Sodium: {sodium}mg</h3>
-          <h3>Cholesterol: {cholesterol}mg</h3>
-          <h3>Potassium: {potassium}mg</h3>
+          </div>
+          <div className='foodStats'>
+          <h3 className='stats'>Calories: {calories}</h3>
+          <h3 className='stats'>Carbs: {carbs}g</h3>
+          <h3 className='stats'>Protein: {protein}g</h3>
+          <h3 className='stats'>Fat: {fat}g</h3>
+          <h3 className='stats'>Sodium: {sodium}mg</h3>
+          <h3 className='stats'>Cholesterol: {cholesterol}mg</h3>
+          <h3 className='stats'>Potassium: {potassium}mg</h3>
+          </div>
           <Link to='/foods'><button onClick={() => addToLogged(food)} className='crudButton'>
           Add to Log
           </button></Link><br />

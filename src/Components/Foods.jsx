@@ -65,9 +65,10 @@ function Foods(props) {
       <Layout>
 
         <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
+        <div className='foodsContainer'>
         <h2 className='allFoods'>All Foods:</h2>
         <ul className='ulFood'>{searchFoodsArr}</ul>
-
+        </div>
         <Link to={"/create-food"}>
           <button className='addFood'>Add Food</button>
         </Link>

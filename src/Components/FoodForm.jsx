@@ -6,6 +6,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
   return (
     <div className="sign-in-form">
       <form onSubmit={handleSubmit}>
+        <div className='createfoodContainer'>
         <label className='createLabel'>Name: </label>
         <input
           placeholder="add food name"
@@ -85,6 +86,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
           required
         />
+        </div>
         <br />
         <br />
         <br />

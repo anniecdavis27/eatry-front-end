@@ -17,12 +17,15 @@ function TheTeam() {
         <h2 className='team'>Meet the Team: </h2>
           <div className='container'>
           <div className="team-Member">
+            <div className='aboutme'>
             <h3 className='name'>Shaina Earle</h3>
             <img
-              src="https://live.staticflickr.com/65535/50137852917_7c3da581fc_n.jpg"
+              src="https://live.staticflickr.com/65535/50137852917_7c3da581fc_n.jpg" className='shaipic'
               alt="shaina-headshot"
             />
-            <p className='shai'>
+            </div>
+            <div className='shaipara'>
+            <p>
               My name is Shaina Earle and my passion is in Web Design. I love
               being able to see exactly what I’m creating in real time. I enjoy
               watching my ideas as well as other people’s ideas come to fruition.
@@ -38,6 +41,7 @@ function TheTeam() {
               </a>
               .
             </p>
+            </div>
           </div>
           <div className="team-Member">
             <h3 className='name'>Brock Podgurski</h3>

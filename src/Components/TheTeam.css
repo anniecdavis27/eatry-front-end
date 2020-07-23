@@ -6,7 +6,7 @@
     font-weight: bolder;
     font-size: 35px;
     text-decoration: underline;
-    margin-top: 30px;
+    padding-top: 30px;
 }
 p {
     color: #aa2020;
@@ -21,11 +21,15 @@ p {
         grid-template-rows: repeat(3, 1fr);
         gap: 10px;
     }
-    .shai {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2
-    ;
+    .aboutme {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
     }
+    .shaipara {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
 
 }
 
@@ -34,5 +38,30 @@ p {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
+        background-color: #aa2020;
     }
-}
+    .name {
+        text-align: center;
+    }
+    .team-Member {
+        border: solid black 2px;
+        border-radius: 60px;
+        background-color: white;
+        opacity: 95%;
+        max-width: 31vw;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .team {
+        background-color: #aa2020;
+        color: white;
+        padding-bottom: 10px;;
+    }
+} 
+/* @media screen and (min-width:426px) {
+    .shai {
+        max-width: 400px;
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+} */
