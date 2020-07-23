@@ -33,7 +33,7 @@ function MealLog() {
   console.log(userID);
 
   const loggedFoodsArr = logged.map((item) => (
-    <li>
+    <li key={item._id}>
       <Link to={`/foods/${item._id}`}>
         <h2>{item.name}</h2>
       </Link>

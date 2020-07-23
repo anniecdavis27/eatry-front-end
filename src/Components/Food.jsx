@@ -112,6 +112,7 @@ if (!user) {
           Add to Log
           </button></Link>
           <Link to='/foods'><button onClick={() => removeFromLogged(food)} className='crudButton'>
+
           Remove from Log
           </button></Link>
           <br />
@@ -128,8 +129,12 @@ if (!user) {
       </>
     );
   } else {
-    return <>
-    </>;
+    return (
+      <>
+      <h1>You must sign in.</h1>
+      <Link to='/sign-in'><h2>sign in</h2></Link>
+      </>
+    )
   }
 };
 
