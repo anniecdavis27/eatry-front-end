@@ -1,0 +1,29 @@
+.welcomeUser {
+    font-size: 40px;
+    color: #aa2020;
+    padding-top:10px;
+}
+h3 {
+    font-size: 25px;
+    text-align: left;
+    color: #fa6b71;
+    margin-left: 20px;
+}
+.nutritionalBreakdown {
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: center;
+    color: #344861;
+}
+.breakdowns {
+    font-size: 25px;
+    text-align: center;
+    color: #aa2020;
+    
+}
+.totCals {
+    font-weight: bolder;
+    font-size: 38px;
+    text-align: center;
+    color: #aa2020;
+}

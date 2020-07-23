@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import Layout from "./Layout";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-import Modal from "./Modal/Modal";
-import "./Modal/Modal.css";
+import Modal from './Modal/Modal';
+import './Modal/Modal.css'
+import './MealLog.css'
 
 function MealLog() {
   const [logged, setLogged] = useState([]);
@@ -56,14 +57,15 @@ function MealLog() {
     return (
       <div className="meal-log">
         <Layout>
-          <h2>Today: </h2>
-          <ul>{loggedFoodsArr}</ul>
-          <button onClick={toggleModal}>End Day</button>
+          <h2 className='today'>Today: </h2>
+          <ul className='foodArray'>{loggedFoodsArr}</ul>
+          <button onClick={toggleModal} className='endDay'>End Day</button>
+
         {showModal ? (<Modal>
             <h1>Are you sure you would like end your day?</h1>
                 <div className="buttons">
-                <Link to={'/close-day'}><button onClick={endDayRevert}>Yes</button></Link>
-                <button onClick={toggleModal}>No</button>
+                <Link to={'/close-day'}><button onClick={endDayRevert} className='yes'>Yes</button></Link>
+                <button onClick={toggleModal} className='no'>No</button>
                 </div>
            </Modal>) : null}
         </Layout>

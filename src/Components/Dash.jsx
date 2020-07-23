@@ -5,6 +5,7 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
 import PieChart from "./PieChart";
+import './Dash.css'
 
 function Dash() {
   const [logged, setLogged] = useState([]);
@@ -67,12 +68,13 @@ function Dash() {
 
   const totPot = mapPot.reduce((a, b) => a + b, 0);
 
+
   if (username.username.length > 1) {
     return (
       <div className="App">
         <Layout>
-          <h2>Welcome, USER.</h2>
-          <h3>Your nutritional Breakdown so far:</h3>
+          <h2 className='welcomeUser'>Welcome, USER.</h2>
+          <h3 className='nutritionalBreakdown'>Your nutritional Breakdown so far:</h3>
           {totCals > 0 ? (
             <PieChart
               totalFat={totFat}
@@ -80,13 +82,13 @@ function Dash() {
               totalProtein={totPro}
             />
           ) : null}
-          <h3>Total Calories: {totCals}</h3>
-          <h3>Carbs: {totCarb}g</h3>
-          <h3>Protein: {totPro}g</h3>
-          <h3>Fat: {totFat}g</h3>
-          <h3>Sodium: {totSod}mg</h3>
-          <h3>Cholesterol: {totChol}mg</h3>
-          <h3>Potassium: {totPot}mg</h3>
+          <h3 className='totCals'>Total Calories: {totCals}</h3>
+          <h3 className='breakdowns'>Carbs: {totCarb}g</h3>
+          <h3 className='breakdowns'>Protein: {totPro}g</h3>
+          <h3 className='breakdowns'>Fat: {totFat}g</h3>
+          <h3 className='breakdowns'>Sodium: {totSod}mg</h3>
+          <h3 className='breakdowns'>Cholesterol: {totChol}mg</h3>
+          <h3 className='breakdowns'>Potassium: {totPot}mg</h3>
         </Layout>
       </div>
     );
@@ -98,6 +100,7 @@ function Dash() {
       </>
     )
   }
+
 }
 
 export default Dash;

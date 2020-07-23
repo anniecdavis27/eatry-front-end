@@ -1,0 +1,16 @@
+.crudButton {
+     color: #aa2020;
+     width: 150px;
+     height: 30px;
+     border-radius: 60px;
+     font-size: 15px;
+     font-weight: bold;
+     margin-top: 10px;
+}
+.foodNameh2 {
+    color: #AA2021;
+    font-size: 40px;
+}
+.data {
+    color: #AA2021
+}

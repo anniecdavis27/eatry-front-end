@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import UserForm from "./UserForm";
 import axios from "axios";
+import './Register.css'
+
 
 const Register = (props) => {
   const [errors, setError] = useState(['error']);
@@ -52,21 +54,22 @@ const Register = (props) => {
   }
 
   return (
-    <>
-      <h1>Register</h1>
+    <div className='box'>
+      <h1 className='register'>Register</h1>
       {errorArray}
       <UserForm
         user={input}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath="/"
-      />{" "}
+      />
+      {" "}
       <br />
-      <Link to="/">Home</Link>
+      <Link to="/" className='home'>Home</Link>
       <br /> 
       <br />
-      <Link to="/sign-in"> Login </Link>
-    </>
+      <Link to="/sign-in" className='login'> Login </Link>
+     </div>
   );
 };
 

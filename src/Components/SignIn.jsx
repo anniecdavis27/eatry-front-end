@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import SignInForm from "../Components/SignInForm";
+import './SignIn.css'
 
 
 
@@ -39,7 +40,7 @@ function SignIn(props) {
 
   return (
     <div className="sign-in">
-      <h1>EATR.Y</h1>
+      <h1 className='signInh1'>EATR.Y</h1>
       <SignInForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}

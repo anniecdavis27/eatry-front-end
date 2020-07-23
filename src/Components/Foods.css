@@ -1,0 +1,58 @@
+.foods {
+    font-size: 40px;
+    color: #951F41;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    text-align: left;
+    list-style-type: disc;
+    margin: 0px;
+    color: white;
+    text-align: center;
+}
+li {
+    margin-bottom: 10px;
+    /* margin-right: 30px; */
+    border-radius: 20px;
+    background-color: #AA2021;
+    height: auto;
+    padding-top: 12px;
+}
+.addFood {
+    color: #aa2020;
+     width: 170px;
+     height: 60px;
+     border-radius: 60px;
+     font-size: 20px;
+     font-weight: bold;
+     margin-top: 20px;
+     margin-bottom: 20px;
+
+}
+.allFoods {
+    color: #aa2020;
+    font-size: 40px;
+}
+.list {
+    margin-left: 0px;
+}
+input {
+    color: black;
+}
+#foods {
+    width: 60vw;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 2em;
+}
+.filterLabel {
+    margin-left: 0em;
+    color: #aa2020;
+}
+.ulFood {
+    padding: 0px 40px 0px 40px;
+}
+.piechart {
+    height: 40vh;
+}

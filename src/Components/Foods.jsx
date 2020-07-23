@@ -4,6 +4,7 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import { Link } from "react-router-dom";
 import SearchParams from "./SearchParams";
+import './Foods.css'
 import { DataContext } from "../App";
 
 function Foods(props) {
@@ -62,11 +63,13 @@ function Foods(props) {
   return (
     <div className="meal-log">
       <Layout>
+
         <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
-        <h2>All Foods:</h2>
-        <ul>{searchFoodsArr}</ul>
+        <h2 className='allFoods'>All Foods:</h2>
+        <ul className='ulFood'>{searchFoodsArr}</ul>
+
         <Link to={"/create-food"}>
-          <button>Add Food</button>
+          <button className='addFood'>Add Food</button>
         </Link>
       </Layout>
     </div>

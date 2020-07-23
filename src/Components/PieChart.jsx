@@ -15,7 +15,7 @@ class PieChartComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className='piechart'>
                 <Pie
                 data={{
                     labels: this.state.labels,

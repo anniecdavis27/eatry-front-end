@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "../App";
 import { Link } from "react-router-dom";
 import Layout from "./Layout";
+import './TheTeam.css'
 
 function TheTeam() {
 
@@ -13,9 +14,9 @@ function TheTeam() {
   return (
     <div className="meal-log">
       <Layout>
-        <h2>Meet the Team: </h2>
+        <h2 className='team'>Meet the Team: </h2>
         <div className="team-Member">
-          <h3>Shaina Earle</h3>
+          <h3 className='name'>Shaina Earle</h3>
           <img
             src="https://live.staticflickr.com/65535/50137852917_7c3da581fc_n.jpg"
             alt="shaina-headshot"
@@ -38,7 +39,7 @@ function TheTeam() {
           </p>
         </div>
         <div className="team-Member">
-          <h3>Brock Podgurski</h3>
+          <h3 className='name'>Brock Podgurski</h3>
           <img
             src="https://live.staticflickr.com/65535/50137855237_a4389175a7_o.png"
             alt="brock-headshot"
@@ -61,7 +62,7 @@ function TheTeam() {
           </p>
         </div>
         <div className="team-Member">
-          <h3>Annie Davis</h3>
+          <h3 className='name'>Annie Davis</h3>
           <img
             src="https://live.staticflickr.com/65535/50137621591_10bba972fe_o.jpg"
             alt="annie-headshot"

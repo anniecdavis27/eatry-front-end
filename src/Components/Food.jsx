@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
+import './Food.css'
 import PieChart from "./PieChart";
 
 const Work = (props) => {
@@ -107,22 +108,22 @@ if (!user) {
           <h3>Sodium: {sodium}mg</h3>
           <h3>Cholesterol: {cholesterol}mg</h3>
           <h3>Potassium: {potassium}mg</h3>
-          <Link to='/foods'><button onClick={() => addToLogged(food)}>
+          <Link to='/foods'><button onClick={() => addToLogged(food)} className='crudButton'>
           Add to Log
           </button></Link>
-          <br />
-          <Link to='/foods'><button onClick={() => removeFromLogged(food)}>
+          <Link to='/foods'><button onClick={() => removeFromLogged(food)} className='crudButton'>
+
           Remove from Log
           </button></Link>
           <br />
           <Link to={`/foods/${props.match.params.id}/edit`}>
-            <button>Edit Food</button>
+            <button className='crudButton'>Edit Food</button>
           </Link>
           <br />
-          <button onClick={() => deleteItem(food)}>Delete Food</button>
+          <button onClick={() => deleteItem(food)} className='crudButton'>Delete Food</button>
           <br />
           <Link to="/foods">
-            <button>Back to All Foods</button>
+            <button className='crudButton'>Back to All Foods</button>
           </Link>
         </Layout>
       </>

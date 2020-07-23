@@ -1,11 +1,14 @@
 import React from "react";
+import './SignInForm.css'
+
+// import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function SignInForm({ input, handleChange, handleSubmit, cancelPath }) {
   return (
     <div className="sign-in-form">
       <form>
-        <label>Username: </label>
+        <label className='username'>Username: </label>
         <input
           placeholder="Enter your username"
           type="text"
@@ -15,7 +18,7 @@ function SignInForm({ input, handleChange, handleSubmit, cancelPath }) {
           required
         />
         <br />
-        <label>Password: </label>
+        <label className='pw'>Password: </label>
         <input
           placeholder="Enter your username"
           type="password"
@@ -23,10 +26,10 @@ function SignInForm({ input, handleChange, handleSubmit, cancelPath }) {
           value={input}
           onChange={handleChange}
           required
-        />
-        <button onClick={handleSubmit}>Enter</button>
+        /><br />
+        <button onClick={handleSubmit} className='enterButton'>Enter</button>
         <Link to={cancelPath}>
-        <button>Cancel</button>
+        <button className='cancelButton'>Cancel</button>
       </Link>
       </form>
     </div>

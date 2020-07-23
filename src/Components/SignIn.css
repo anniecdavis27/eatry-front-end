@@ -1,0 +1,46 @@
+ /* @import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); */
+
+ .sign-in {
+     background: #aa2020;
+     padding-bottom: 40vh;
+     padding-right: 20px;
+     font-size: 60px;
+     font-family: 'Roboto', sans-serif;
+ }
+ .signInh1 {
+    font-family: 'Bubbler One', sans-serif; 
+    text-align: center;
+    font-size: 80px;
+    color: white;
+    margin-block-start: 0em;
+    padding-top: 200px;
+ }
+ label {
+     font-size: 35px;
+     color: white;
+ }
+ input {
+     height: 28px;
+     width: 170px;
+     margin-bottom: 7px;
+     font-size: 20px;
+     color: white;
+ }
+ .enterButton, .cancelButton {
+     color: #aa2020;
+     width: 120px;
+     height: 40px;
+     border-radius: 60px;
+     font-size: 20px;
+     font-weight: bold;
+     margin-top: 30px;
+     align-items: center;
+     margin-left: 20px;
+     /* margin-bottom: 60vh; */
+ }
+ .error {
+     font-size: 20px;
+     color: white;
+ }
+ 

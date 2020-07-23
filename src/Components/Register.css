@@ -1,0 +1,43 @@
+.register {
+    font-size: 45px;
+    color:white;
+    margin-top: 70px;
+    padding-top: 30px;
+}
+.home, .login {
+    font-size: 20px; 
+    font-weight: bolder;
+    color: white;
+}
+.regsubmit, .regcancel {
+    color: #aa2020;
+     width: 80px;
+     height: 25px;
+     border-radius: 60px;
+     font-size: 15px;
+     font-weight: bold;
+     margin-left: 10px;
+     margin-top: 30px
+}
+.box {
+    background-color: #aa2020;
+    color: white;
+    padding-bottom: 35vh;
+    padding-top: 2vh;
+}
+.regLabel {
+    font-size: 20px;
+    color: white;
+}
+form {
+    text-align: center;
+}
+a:hover {
+    text-decoration: underline;
+}
+.regsubmit:hover, .regcancel:hover {
+    text-decoration: underline;
+}
+.input {
+    height: 70px
+}

@@ -1,0 +1,14 @@
+.createLabel {
+    color: #951F41;
+    font-size: 28px;
+    text-align: left;
+}
+form {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+input {
+    margin-top: 10px;
+}
+
