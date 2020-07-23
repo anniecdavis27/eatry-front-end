@@ -4,33 +4,27 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 75px;
+    width: 112%;
+    height: 110px;
     background-color: #aa2020;
 }
 .headerh1 {
     color: white;
     font-family: 'Bubbler One', sans-serif;
     margin-left: 20px;
+    font-size: 70px;
 }
 
 .nav {
     text-decoration: none;
     color: inherit;
-}
-.nav {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
-} 
+}
 h1 {
     color: white;
 } 
-.header {
-    display: flex;
-    background-color: #aa2020;
-    width: 100%;
-}
 li {
    color: white;
 }
@@ -55,8 +49,8 @@ a:hover {
 
 .hamburger-btn {
     padding: 0px 20px;
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
     visibility: visible;
     display: flex;
     align-items: center;
@@ -71,6 +65,7 @@ a:hover {
     background-color: white;
     transition: all .5 ease-in-out;
     cursor: pointer;
+    margin-right: 30px;
 }
 
 .hamburger-patty::before,
@@ -124,31 +119,39 @@ a:hover {
     height: 250px;
 }
 
+
 .nav-link {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-  }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: white; 
-    border-radius: 90px; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #aa2020;
-    border-radius: 90px; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: white; 
+  @media screen and (min-width:768px) {
+     .hamburger-btn {
+         visibility: hidden;
+     } 
+     .nav-items {
+        visibility: unset;
+        width: 100%;
+        height: 100%;
+        /* overflow: auto; */
+        cursor: pointer;
+        color: white;
+        margin-left: 2em;
+        padding-top: 10px;
+    }
+    .nav {
+        color: white;
+        font-size: 25px;
+        margin-top: 25px
+    }
+    .dropdown-menu.show {
+        visibility: hidden;
+        height: 0px;
+    }
+
+
   }
 
 /* .nav-link:hover {
@@ -160,9 +163,9 @@ a:hover {
     .navflex {
         justify-content: flex-start;
         align-items: center;
-    }
+    }  */
     
-    .nav-link-desktop {
+    /* .nav-link-desktop {
         visibility: visible;
         width: 150px;
         text-align: center;
@@ -191,6 +194,6 @@ a:hover {
     .dropdown-menu.show {
         visibility: hidden;
         height: 0px;
-    }
-} */
+    } */
+/* }  */
 

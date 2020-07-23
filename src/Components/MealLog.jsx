@@ -52,36 +52,30 @@ function MealLog() {
     return (
       <div className="meal-log">
         <Layout>
-          <h2 className="today">Today: </h2>
-          <ul className="foodArray">{loggedFoodsArr}</ul>
-          <button onClick={toggleModal} className="endDay">
-            End Day
-          </button>
 
-          {showModal ? (
-            <Modal>
-              <h1>Are you sure you would like end your day?</h1>
-              <div className="buttons">
-                <Link to={"/close-day"}>
-                  <button onClick={endDayRevert} className="yes">
-                    Yes
-                  </button>
-                </Link>
-                <button onClick={toggleModal} className="no">
-                  No
-                </button>
-              </div>
-            </Modal>
-          ) : null}
+          <h2 className='today'>Today: </h2>
+          <div className='logContainer'>
+          <ul className='foodArray'>{loggedFoodsArr}</ul>
+          </div>
+          <button onClick={toggleModal} className='endDay'>End Day</button>
+
+        {showModal ? (<Modal>
+            <h1 className='yousure'>Are you sure you would like end your day?</h1>
+                <div className="buttons">
+                <Link to={'/close-day'}><button onClick={endDayRevert} className='yes'>Yes</button></Link>
+                <button onClick={toggleModal} className='no'>No</button>
+                </div>
+           </Modal>) : null}
+
         </Layout>
       </div>
     );
   } else {
     return (
       <>
-        <h1>You must sign in.</h1>
+        <h1 className='signIn'>You must sign in.</h1>
         <Link to="/sign-in">
-          <h2>sign in</h2>
+          <h2 className='signInLink'>sign in</h2>
         </Link>
       </>
     );

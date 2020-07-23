@@ -23,7 +23,7 @@ function Dash() {
     };
     makeAPICall();
   }, [username.username]);
-
+ 
   const mapCals = logged.map((item) => {
     return item.calories;
   });
@@ -74,6 +74,7 @@ function Dash() {
           <h3 className="nutritionalBreakdown">
             Your nutritional Breakdown so far:
           </h3>
+        <div className='dashContainer'>
           {totCals > 0 ? (
             <PieChart
               totalFat={totFat}
@@ -81,23 +82,24 @@ function Dash() {
               totalProtein={totPro}
             />
           ) : null}
-          <h3 className="totCals">Total Calories: {totCals}</h3>
-          <h3 className="breakdowns">Carbs: {totCarb}g</h3>
-          <h3 className="breakdowns">Protein: {totPro}g</h3>
-          <h3 className="breakdowns">Fat: {totFat}g</h3>
-          <h3 className="breakdowns">Sodium: {totSod}mg</h3>
-          <h3 className="breakdowns">Cholesterol: {totChol}mg</h3>
-          <h3 className="breakdowns">Potassium: {totPot}mg</h3>
+          <div className='dashcontainer2'>
+          <h3 className='totCals'>Total Calories: {totCals}</h3>
+          <h3 className='breakdowns'>Carbs: {totCarb}g</h3>
+          <h3 className='breakdowns'>Protein: {totPro}g</h3>
+          <h3 className='breakdowns'>Fat: {totFat}g</h3>
+          <h3 className='breakdowns'>Sodium: {totSod}mg</h3>
+          <h3 className='breakdowns'>Cholesterol: {totChol}mg</h3>
+          <h3 className='breakdowns'>Potassium: {totPot}mg</h3>
+          </div>
+          </div>
         </Layout>
       </div>
     );
   } else {
     return (
       <>
-        <h1>You must sign in.</h1>
-        <Link to="/sign-in">
-          <h2>sign in</h2>
-        </Link>
+      <h1 className='signIn'>You must sign in.</h1>
+      <Link to='/sign-in'><h2 className='signInLink'>sign in</h2></Link>
       </>
     );
   }
