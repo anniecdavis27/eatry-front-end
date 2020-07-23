@@ -21,6 +21,8 @@ li {
 }
 .addFood {
     color: #aa2020;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
      width: 170px;
      height: 60px;
      border-radius: 60px;
@@ -88,7 +90,7 @@ input {
         margin-top: 6vh;
     }
     .foodStats {
-        color: green;
+        color: #aa2020;
     }
     
 }

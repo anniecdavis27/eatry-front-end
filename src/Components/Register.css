@@ -11,6 +11,8 @@
 }
 .regsubmit, .regcancel {
     color: #aa2020;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
      width: 80px;
      height: 25px;
      border-radius: 60px;
