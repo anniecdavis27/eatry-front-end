@@ -27,10 +27,19 @@ h3 {
     text-align: center;
     color: #aa2020;
 }
+.app {
+    background-color: #aa2020;
+}
 .chartjs-render-monitor {
     max-height: 263px;
     max-width: 526px;
     text-align: center;
+}
+.signInLink {
+    color: black;
+}
+.signInLink:hover {
+    text-decoration: underline;
 }
 
 @media screen and (min-width:768px) {

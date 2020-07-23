@@ -102,7 +102,6 @@ if (!user) {
           <h2 className='foodItem'>{name}</h2>
           <div className='foodsContainer'>
           <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
-          </div>
           <div className='foodStats'>
           <h3 className='stats'>Calories: {calories}</h3>
           <h3 className='stats'>Carbs: {carbs}g</h3>
@@ -112,11 +111,11 @@ if (!user) {
           <h3 className='stats'>Cholesterol: {cholesterol}mg</h3>
           <h3 className='stats'>Potassium: {potassium}mg</h3>
           </div>
+          </div>
           <Link to='/foods'><button onClick={() => addToLogged(food)} className='crudButton'>
           Add to Log
           </button></Link><br />
           <Link to='/foods'><button onClick={() => removeFromLogged(food)} className='crudButton'>
-
           Remove from Log
           </button></Link>
           <br />

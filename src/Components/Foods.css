@@ -58,7 +58,7 @@ input {
     padding: 0px 40px 0px 40px;
 }
 .piechart {
-    height: 40vh;
+    height: auto;
 }
 .foodItem {
     color: #aa2020;
@@ -79,14 +79,16 @@ input {
         text-align: center;
         margin-left: 13vw;
         margin-right:13vw;
+        display: flex;
+        
     }
     .chartjs-render-monitor {
-        max-height: 3000px;
-        max-width: 2000px;
+        max-height: 4000px;
+        max-width: 3000px;
         margin-top: 6vh;
     }
     .foodStats {
-        color:green;
+        color: green;
     }
     
 }
