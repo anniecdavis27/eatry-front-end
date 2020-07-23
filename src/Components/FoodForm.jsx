@@ -85,6 +85,15 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           onChange={handleChange}
           required
         />
+         <br />
+        <label className='createLabel'>Recipe Link: </label>
+        <input
+          placeholder="add recipe link"
+          type="text"
+          value={item.Link}
+          name="Link"
+          onChange={handleChange}
+        />
         <br />
         <br />
         <br />

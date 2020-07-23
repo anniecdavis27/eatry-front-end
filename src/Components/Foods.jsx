@@ -51,26 +51,16 @@ function Foods(props) {
     </li>
   ));
 
-  //  let searchFoodsArr = foods.map((item) => (
-  //   <li key={item._id}>
-  //     <Link to={`/foods/${item._id}`}>
-  //       <h2>{item.name}</h2>
-  //     </Link>
-  //   </li>
-  // ));
-
   if (username.username.length > 1) {
   return (
     <div className="meal-log">
       <Layout>
-
+      <Link to={"/create-food"}>
+          <button className='addFood'>Add Food</button>
+        </Link>
         <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
         <h2 className='allFoods'>All Foods:</h2>
         <ul className='ulFood'>{searchFoodsArr}</ul>
-
-        <Link to={"/create-food"}>
-          <button className='addFood'>Add Food</button>
-        </Link>
       </Layout>
     </div>
   )

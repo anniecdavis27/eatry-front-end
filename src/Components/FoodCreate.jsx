@@ -16,6 +16,8 @@ const FoodCreate = (props) => {
     sodium: "",
     cholesterol: "",
     potassium: "",
+    Link: ''
+
   });
   const [item, setItem] = useState(null);
 

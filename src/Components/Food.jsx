@@ -14,8 +14,6 @@ const Work = (props) => {
 
   const username = useContext(DataContext);
 
-  console.log(username.username.length);
-
   useEffect(() => {
     const makeAPICall = async () => {
       try {
@@ -29,6 +27,8 @@ const Work = (props) => {
     };
     makeAPICall();
   }, [props.match.params.id]);
+
+  console.log(food)
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -44,11 +44,9 @@ const Work = (props) => {
     makeAPICall();
   }, [username.username]);
 
-  console.log(user)
 if (!user) {
   return <h2>...loading</h2>
 }
-  console.log(user._id)
 
   const addToLogged = (food) => {
     axios({
@@ -94,6 +92,7 @@ if (!user) {
   const cholesterol = food.cholesterol;
   const potassium = food.potassium;
   const sodium = food.sodium;
+  const link = food.Link
 
   if (username.username.length > 1) {
     return (
@@ -108,6 +107,8 @@ if (!user) {
           <h3>Sodium: {sodium}mg</h3>
           <h3>Cholesterol: {cholesterol}mg</h3>
           <h3>Potassium: {potassium}mg</h3>
+          <h3>Potassium: {potassium}mg</h3>
+          {food.Link ? <a href={link}><h3>See Recipe...</h3></a> : null}
           <Link to='/foods'><button onClick={() => addToLogged(food)} className='crudButton'>
           Add to Log
           </button></Link>

@@ -20,7 +20,7 @@ function SignInForm({ input, handleChange, handleSubmit, cancelPath }) {
         <br />
         <label className='pw'>Password: </label>
         <input
-          placeholder="Enter your username"
+          placeholder="Enter your password"
           type="password"
           name="password"
           value={input}

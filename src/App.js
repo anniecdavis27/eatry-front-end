@@ -39,7 +39,7 @@ function App(props) {
             <Route path="/dash" component={Dash} />
             <Route path="/log" component={MealLog} />
             <Route path="/foods/:id/edit" component={FoodEdit} />
-            <Route path="/foods/:id" component={Food} />
+            <Route exact path="/foods/:id" component={Food} />
             <Route exact path="/foods" component={Foods} />
             <Route path="/team" component={TheTeam} />
             <Route path="/create-food" component={FoodCreate} />
