@@ -30,7 +30,6 @@ function Foods(props) {
   };
 
   let searchFoods = foods.filter((item) => {
-    console.log(item.name);
     return item.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
