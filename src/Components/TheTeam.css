@@ -78,7 +78,6 @@ p {
     border: solid black 2px;
     border-radius: 60px;
     background-color: white;
-    opacity: 95%;
     max-width: 31vw;
     min-width: 25vw;
     margin-left: 2em;
@@ -92,4 +91,7 @@ p {
 }
 .shaipic {
     max-width: 250px; 
+}
+.team-container {
+    color:
 }

@@ -14,3 +14,6 @@
 .data {
     color: #AA2021
 }
+.foodContainer {
+    display: flex;
+}

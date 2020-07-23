@@ -33,10 +33,10 @@ form {
     text-align: center;
 }
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline white;
 }
 .regsubmit:hover, .regcancel:hover {
-    text-decoration: underline;
+    text-decoration: underline white;
 }
 .input {
     height: 70px
