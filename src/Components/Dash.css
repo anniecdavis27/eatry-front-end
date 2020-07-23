@@ -27,3 +27,32 @@ h3 {
     text-align: center;
     color: #aa2020;
 }
+.chartjs-render-monitor {
+    max-height: 263px;
+    max-width: 526px;
+    text-align: center;
+}
+
+@media screen and (min-width:768px) {
+    .dashContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .chartjs-render-monitor {
+        max-height: 3000px;
+        max-width: 2000px;
+        margin-top: 6vh;
+    }
+    .welcomeUser {
+        font-size: 60px;
+        padding-top:20px;
+    }
+    .nutritionalBreakdown {
+        margin-left: 60px;
+        margin-right: 60px;
+        font-size: 40px;
+    }
+
+}
+

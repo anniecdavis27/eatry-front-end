@@ -99,7 +99,7 @@ if (!user) {
     return (
       <>
         <Layout>
-          <h2>{name}</h2>
+          <h2 className='foodItem'>{name}</h2>
           <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
           <h3>Calories: {calories}</h3>
           <h3>Carbs: {carbs}g</h3>
@@ -110,7 +110,7 @@ if (!user) {
           <h3>Potassium: {potassium}mg</h3>
           <Link to='/foods'><button onClick={() => addToLogged(food)} className='crudButton'>
           Add to Log
-          </button></Link>
+          </button></Link><br />
           <Link to='/foods'><button onClick={() => removeFromLogged(food)} className='crudButton'>
 
           Remove from Log
@@ -131,8 +131,8 @@ if (!user) {
   } else {
     return (
       <>
-      <h1>You must sign in.</h1>
-      <Link to='/sign-in'><h2>sign in</h2></Link>
+      <h1 className='signIn'>You must sign in.</h1>
+      <Link to='/sign-in'><h2 className='signInLink'>sign in</h2></Link>
       </>
     )
   }

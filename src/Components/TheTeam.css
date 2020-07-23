@@ -4,11 +4,35 @@
 .team {
     color: #aa2020;
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 35px;
     text-decoration: underline;
+    margin-top: 30px;
 }
 p {
     color: #aa2020;
     margin-left: 30px;
     margin-right: 30px;
+}
+
+@media screen and (min-width:768px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .shai {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2
+    ;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
 }

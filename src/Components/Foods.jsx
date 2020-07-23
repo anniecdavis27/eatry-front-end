@@ -77,8 +77,8 @@ function Foods(props) {
 } else {
   return (
     <>
-    <h1>You must sign in.</h1>
-    <Link to='/sign-in'><h2>sign in</h2></Link>
+    <h1 className='signIn'>You must sign in.</h1>
+    <Link to='/sign-in'><h2 className='signInLink'>sign in</h2></Link>
     </>
   )
 }
