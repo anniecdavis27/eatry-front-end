@@ -22,32 +22,30 @@ function App(props) {
     setUsername(user);
   };
 
-  console.log(username);
-  
-    return (
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route
-            path="/sign-in"
-            render={(routerProps) => (
-              <SignIn {...routerProps} getUserName={getUserName} />
-            )}
-          />
-          <Route path="/user/register" component={Register} />
-          <DataContext.Provider value={{ username }}>
-            <Route path="/dash" component={Dash} />
-            <Route path="/log" component={MealLog} />
-            <Route path="/foods/:id/edit" component={FoodEdit} />
-            <Route exact path="/foods/:id" component={Food} />
-            <Route exact path="/foods" component={Foods} />
-            <Route path="/team" component={TheTeam} />
-            <Route path="/create-food" component={FoodCreate} />
-            <Route path="/close-day" component={EndOfDay} />
-          </DataContext.Provider>
-        </Switch>
-      </div>
-    );
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path="/" component={Welcome} />
+        <Route
+          path="/sign-in"
+          render={(routerProps) => (
+            <SignIn {...routerProps} getUserName={getUserName} />
+          )}
+        />
+        <Route path="/user/register" component={Register} />
+        <DataContext.Provider value={{ username }}>
+          <Route path="/dash" component={Dash} />
+          <Route path="/log" component={MealLog} />
+          <Route path="/foods/:id/edit" component={FoodEdit} />
+          <Route exact path="/foods/:id" component={Food} />
+          <Route exact path="/foods" component={Foods} />
+          <Route path="/team" component={TheTeam} />
+          <Route path="/create-food" component={FoodCreate} />
+          <Route path="/close-day" component={EndOfDay} />
+        </DataContext.Provider>
+      </Switch>
+    </div>
+  );
 }
 
 export default withRouter(App);

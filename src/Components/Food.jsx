@@ -4,13 +4,13 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import Layout from "./Layout";
-import './Food.css'
+import "./Food.css";
 import PieChart from "./PieChart";
 
 const Work = (props) => {
   const [food, setFood] = useState(null);
   const [isDeleted, setIsDeleted] = useState(false);
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
 
   const username = useContext(DataContext);
 
@@ -28,14 +28,10 @@ const Work = (props) => {
     makeAPICall();
   }, [props.match.params.id]);
 
-  console.log(food)
-
   useEffect(() => {
     const makeAPICall = async () => {
       try {
-        const response = await axios(
-          `${apiUrl}/user/${username.username}`
-        );
+        const response = await axios(`${apiUrl}/user/${username.username}`);
         setUser(response.data[0]);
       } catch (err) {
         console.error(err);
@@ -44,24 +40,24 @@ const Work = (props) => {
     makeAPICall();
   }, [username.username]);
 
-if (!user) {
-  return <h2>...loading</h2>
-}
+  if (!user) {
+    return <h2>...loading</h2>;
+  }
 
   const addToLogged = (food) => {
     axios({
-          url: `${apiUrl}/user/add/${food._id}/${user._id}/`,
-          method: "PUT",
-          data: { food }
-        });
+      url: `${apiUrl}/user/add/${food._id}/${user._id}/`,
+      method: "PUT",
+      data: { food },
+    });
   };
 
   const removeFromLogged = (food) => {
     axios({
-          url: `${apiUrl}/user/${user._id}/removeone/${food._id}/`,
-          method: "PUT",
-          data: { foods: [] }
-        });
+      url: `${apiUrl}/user/${user._id}/removeone/${food._id}/`,
+      method: "PUT",
+      data: { foods: [] },
+    });
   };
 
   const deleteItem = async (food) => {
@@ -92,7 +88,7 @@ if (!user) {
   const cholesterol = food.cholesterol;
   const potassium = food.potassium;
   const sodium = food.sodium;
-  const link = food.Link
+  const link = food.Link;
 
   if (username.username.length > 1) {
     return (
@@ -108,23 +104,35 @@ if (!user) {
           <h3>Cholesterol: {cholesterol}mg</h3>
           <h3>Potassium: {potassium}mg</h3>
           <h3>Potassium: {potassium}mg</h3>
-          {food.Link ? <a href={link}><h3>See Recipe...</h3></a> : null}
-          <Link to='/foods'><button onClick={() => addToLogged(food)} className='crudButton'>
-          Add to Log
-          </button></Link>
-          <Link to='/foods'><button onClick={() => removeFromLogged(food)} className='crudButton'>
-
-          Remove from Log
-          </button></Link>
-          <br />
-          <Link to={`/foods/${props.match.params.id}/edit`}>
-            <button className='crudButton'>Edit Food</button>
+          {food.Link ? (
+            <a href={link}>
+              <h3>See Recipe...</h3>
+            </a>
+          ) : null}
+          <Link to="/foods">
+            <button onClick={() => addToLogged(food)} className="crudButton">
+              Add to Log
+            </button>
+          </Link>
+          <Link to="/foods">
+            <button
+              onClick={() => removeFromLogged(food)}
+              className="crudButton"
+            >
+              Remove from Log
+            </button>
           </Link>
           <br />
-          <button onClick={() => deleteItem(food)} className='crudButton'>Delete Food</button>
+          <Link to={`/foods/${props.match.params.id}/edit`}>
+            <button className="crudButton">Edit Food</button>
+          </Link>
+          <br />
+          <button onClick={() => deleteItem(food)} className="crudButton">
+            Delete Food
+          </button>
           <br />
           <Link to="/foods">
-            <button className='crudButton'>Back to All Foods</button>
+            <button className="crudButton">Back to All Foods</button>
           </Link>
         </Layout>
       </>
@@ -132,10 +140,12 @@ if (!user) {
   } else {
     return (
       <>
-      <h1>You must sign in.</h1>
-      <Link to='/sign-in'><h2>sign in</h2></Link>
+        <h1>You must sign in.</h1>
+        <Link to="/sign-in">
+          <h2>sign in</h2>
+        </Link>
       </>
-    )
+    );
   }
 };
 

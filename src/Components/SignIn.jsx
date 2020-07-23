@@ -2,24 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import SignInForm from "../Components/SignInForm";
-import './SignIn.css'
+import "./SignIn.css";
 import apiUrl from "../apiConfig";
-
-
 
 function SignIn(props) {
   const [input, setInput] = useState({ username: "", password: "" });
   const [errors, setError] = useState([]);
   const [user, setUser] = useState(null);
-  const [username, setUsername] = useState(null)
+  const [username, setUsername] = useState(null);
 
   const handleChange = (event) => {
     setInput({
       ...input,
       [event.target.name]: event.target.value,
     });
-    setUsername(input.username)
-    props.getUserName(username)
+    setUsername(input.username);
+    props.getUserName(username);
   };
 
   const handleSubmit = (event) => {
@@ -37,17 +35,15 @@ function SignIn(props) {
       .catch(console.error);
   };
 
-  // console.log(user)
-
   return (
     <div className="sign-in">
-      <h1 className='signInh1'>EATR.Y</h1>
+      <h1 className="signInh1">EATR.Y</h1>
       <SignInForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath="/"
       />
-      
+
       <h1>
         {errors.message === "Login Successful" ? (
           <Redirect

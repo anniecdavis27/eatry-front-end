@@ -16,7 +16,7 @@ const FoodCreate = (props) => {
     sodium: "",
     cholesterol: "",
     potassium: "",
-    Link: ''
+    Link: "",
   });
   const [isUpdated, setIsUpdated] = useState(false);
 
