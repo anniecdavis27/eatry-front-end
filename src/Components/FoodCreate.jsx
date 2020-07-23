@@ -3,7 +3,7 @@ import axios from "axios";
 import FoodForm from "./FoodForm";
 import Layout from "./Layout";
 import apiUrl from "../apiConfig";
-import './FoodCreate.css'
+import "./FoodCreate.css";
 
 const FoodCreate = (props) => {
   console.log("ItemCreate props", props);
@@ -16,6 +16,7 @@ const FoodCreate = (props) => {
     sodium: "",
     cholesterol: "",
     potassium: "",
+    Link: "",
   });
   const [item, setItem] = useState(null);
 
@@ -26,8 +27,6 @@ const FoodCreate = (props) => {
       [event.target.name]: event.target.value,
     });
   };
-
-  console.log(input);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,14 +39,12 @@ const FoodCreate = (props) => {
     })
       .then((res) => {
         setItem({ createdItem: res.data.item });
-        //   isUpdated(true)
         props.history.push("/foods");
       })
       .catch(console.error);
   };
 
   console.log(item);
-  //   console.log(updated)
 
   return (
     <Layout>

@@ -4,14 +4,11 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import { Link } from "react-router-dom";
 import SearchParams from "./SearchParams";
-import './Foods.css'
+import "./Foods.css";
 import { DataContext } from "../App";
 
 function Foods(props) {
-
   const username = useContext(DataContext);
-
-  console.log(username.username.length);
 
   const [foods, setFoods] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,19 +25,12 @@ function Foods(props) {
     makeAPICall();
   }, []);
 
-  console.log(foods)
-
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  console.log(searchTerm)
-
   let searchFoods = foods.filter((item) => {
-    console.log(item.name)
-
     return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-    // return name
   });
 
   let searchFoodsArr = searchFoods.map((item) => (
@@ -51,27 +41,19 @@ function Foods(props) {
     </li>
   ));
 
-  //  let searchFoodsArr = foods.map((item) => (
-  //   <li key={item._id}>
-  //     <Link to={`/foods/${item._id}`}>
-  //       <h2>{item.name}</h2>
-  //     </Link>
-  //   </li>
-  // ));
-
   if (username.username.length > 1) {
   return (
     <div className="meal-log">
       <Layout>
-
+<Link to={"/create-food"}>
+          <button className='addFood'>Add Food</button>
+        </Link>
         <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
         <div className='foodsContainer'>
         <h2 className='allFoods'>All Foods:</h2>
         <ul className='ulFood'>{searchFoodsArr}</ul>
         </div>
-        <Link to={"/create-food"}>
-          <button className='addFood'>Add Food</button>
-        </Link>
+        
       </Layout>
     </div>
   )
