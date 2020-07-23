@@ -29,23 +29,20 @@ function Foods(props) {
 
   console.log(foods)
 
-  // const handleChange = (event) => {
-  //   setSearchTerm(event.target.value);
-  // };
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-  // let searchFoods = foods.filter((item) => {
-  //   return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-  // });
+  console.log(searchTerm)
 
-  // let searchFoodsArr = searchFoods.map((item) => (
-  //   <li key={item._id}>
-  //     {/* <Link to={`/foods/${item._id}`}> */}
-  //       <h2>{item.name}</h2>
-  //     {/* </Link> */}
-  //   </li>
-  // ));
+  let searchFoods = foods.filter((item) => {
+    console.log(item.name)
 
-   let searchFoodsArr = foods.map((item) => (
+    return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+    // return name
+  });
+
+  let searchFoodsArr = searchFoods.map((item) => (
     <li key={item._id}>
       <Link to={`/foods/${item._id}`}>
         <h2>{item.name}</h2>
@@ -53,11 +50,19 @@ function Foods(props) {
     </li>
   ));
 
+  //  let searchFoodsArr = foods.map((item) => (
+  //   <li key={item._id}>
+  //     <Link to={`/foods/${item._id}`}>
+  //       <h2>{item.name}</h2>
+  //     </Link>
+  //   </li>
+  // ));
+
   if (username.username.length > 1) {
   return (
     <div className="meal-log">
       <Layout>
-        {/* <SearchParams searchTerm={searchTerm} handleChange={handleChange} /> */}
+        <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
         <h2>All Foods:</h2>
         <ul>{searchFoodsArr}</ul>
         <Link to={"/create-food"}>

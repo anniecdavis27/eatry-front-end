@@ -110,6 +110,7 @@ if (!user) {
           <Link to='/foods'><button onClick={() => addToLogged(food)}>
           Add to Log
           </button></Link>
+          <br />
           <Link to='/foods'><button onClick={() => removeFromLogged(food)}>
           Remove from Log
           </button></Link>
@@ -127,8 +128,12 @@ if (!user) {
       </>
     );
   } else {
-    return <>
-    </>;
+    return (
+      <>
+      <h1>You must sign in.</h1>
+      <Link to='/sign-in'><h2>sign in</h2></Link>
+      </>
+    )
   }
 };
 

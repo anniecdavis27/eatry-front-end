@@ -12,6 +12,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.name}
           name="name"
           onChange={handleChange}
+          required
         />
         <br />
         <label>Calories: </label>
@@ -21,6 +22,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.calories}
           name="calories"
           onChange={handleChange}
+          required
         />
         <br />
         <label>Carbs: </label>
@@ -30,6 +32,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.carbs}
           name="carbs"
           onChange={handleChange}
+          required
         />
         <br />
         <label>Protein: </label>
@@ -39,6 +42,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.protein}
           name="protein"
           onChange={handleChange}
+          required
         />
         <br />
         <label>Fat: </label>
@@ -48,6 +52,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.totalFat}
           name="totalFat"
           onChange={handleChange}
+          required
         />
         <br />
         <label>Sodium: </label>
@@ -57,6 +62,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.sodium}
           name="sodium"
           onChange={handleChange}
+          required
         />
         <br />
         <label>Cholesterol: </label>
@@ -66,6 +72,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.cholesterol}
           name="cholesterol"
           onChange={handleChange}
+          required
         />
         <br />
         <label>Potassium: </label>
@@ -75,6 +82,7 @@ function FoodForm({ item, handleSubmit, handleChange, cancelPath }) {
           value={item.potassium}
           name="potassium"
           onChange={handleChange}
+          required
         />
         <br />
         <br />
