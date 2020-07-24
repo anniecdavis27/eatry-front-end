@@ -95,7 +95,7 @@ const Work = (props) => {
       <>
         <Layout>
           <h2 className='foodItem'>{name}</h2>
-          <div className='foodsContainer'>
+          <div className='foodContainer'>
           <PieChart totalFat={fat} totalCarbs={carbs} totalProtein={protein} />
 
           <div className='foodStats'>

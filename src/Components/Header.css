@@ -22,6 +22,7 @@
     list-style-type: none;
     justify-content: space-around;
 }
+
 h1 {
     color: white;
 } 
@@ -35,16 +36,15 @@ a {
 a:hover {
     text-decoration: underline white;
 } 
+
+.eatry:hover {
+    text-decoration: none;
+}
 .dash, .log, .food, .theTeam {
     border: none;
     color: white;
 }
 
-.dash:hover, .log:hover, .food:hover, .theTeam:hover {
-    border: none;
-    color: white;
-    text-decoration: underline;
-}
 .nav-items {
     visibility: hidden;
     width: 0px;
@@ -54,7 +54,7 @@ a:hover {
 }
 
 .hamburger-btn {
-    padding: 0px 20px;
+    padding-right: 10px;
     width: 100px;
     height: 100px;
     visibility: visible;
@@ -133,15 +133,19 @@ a:hover {
 }
 
   
-  @media screen and (min-width:768px) {
+  @media(hover: hover) and (pointer: fine) {
+      .header {
+          justify-content: flex-start;
+      }
      .hamburger-btn {
          visibility: hidden;
+         width: 0px;
+         overflow: hidden;
      } 
      .nav-items {
         visibility: unset;
         width: 100%;
         height: 100%;
-        /* overflow: auto; */
         cursor: pointer;
         color: white;
         margin-left: 2em;

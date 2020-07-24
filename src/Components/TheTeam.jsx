@@ -12,7 +12,7 @@ function TheTeam() {
   return (
     <div className="team">
       <Layout>
-        <h2 className='team'>Meet the Team: </h2>
+        <h2 className='meet-team'>Meet the Team: </h2>
           <div className='container'>
           <div className="team-Member">
             <div className='aboutme'>

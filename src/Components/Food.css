@@ -1,3 +1,7 @@
+.foodContainer {
+    width: 100vw;
+}
+
 .crudButton {
      color: #aa2020;
      width: 150px;
@@ -9,6 +13,12 @@
      background-color: white;
      font-family: 'Roboto', sans-serif;
 }
+
+canvas {
+    width: 100vw !important;
+    height: auto !important;
+}
+
 .foodNameh2 {
     color: #AA2021;
     font-size: 40px;
@@ -16,6 +26,22 @@
 .data {
     color: #AA2021
 }
-.foodContainer {
-    display: flex;
+
+@media (orientation: landscape) {
+    .foodContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .foodStats {
+        width: 50vw;
+    }
+
+    canvas {
+        width: 50vw !important;
+        height: auto !important;
+    
+    }
 }

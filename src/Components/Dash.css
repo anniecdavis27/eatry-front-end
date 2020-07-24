@@ -7,7 +7,6 @@
 canvas {
     width: 100vw !important;
     height: auto !important;
-
 }
 
 h3 {
@@ -60,9 +59,13 @@ h3 {
 @media (orientation: landscape) {
     .dashContainer {
         display: flex;
+        justify-content: flex-start;
         flex-direction: row;
         width: 100%;
-        
+    }
+
+    .dashcontainer2 {
+        width: 50vw;
     }
 
     canvas {
