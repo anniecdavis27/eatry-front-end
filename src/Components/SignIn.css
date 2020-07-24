@@ -4,7 +4,7 @@
 
  .sign-in {
      background: #aa2020;
-     padding-bottom: 40vh;
+     height: 100vh;
      padding-right: 20px;
      font-size: 60px;
      font-family: 'Roboto', sans-serif;
@@ -15,7 +15,7 @@
     font-size: 80px;
     color: white;
     margin-block-start: 0em;
-    padding-top: 200px;
+    padding-top: 30vh;
  }
  label {
      font-size: 35px;

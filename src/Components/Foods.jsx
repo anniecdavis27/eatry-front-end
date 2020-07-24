@@ -42,30 +42,31 @@ function Foods(props) {
   ));
 
   if (username.username.length > 1) {
-  return (
-    <div className="meal-log">
-      <Layout>
-<Link to={"/create-food"}>
-          <button className='addFood'>Add Food</button>
+    return (
+      <div className="meal-log">
+        <Layout>
+        <h2 className="allFoods">All Foods:</h2>
+          <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
+          <Link to={"/create-food"}>
+            <button className="addFood">Add Food</button>
+          </Link>
+          <div className="foodsContainer">
+            
+            <ul className="ulFood">{searchFoodsArr}</ul>
+          </div>
+        </Layout>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <h1 className="signIn">You must sign in.</h1>
+        <Link to="/sign-in">
+          <h2 className="signInLink">sign in</h2>
         </Link>
-        <SearchParams searchTerm={searchTerm} handleChange={handleChange} />
-        <div className='foodsContainer'>
-        <h2 className='allFoods'>All Foods:</h2>
-        <ul className='ulFood'>{searchFoodsArr}</ul>
-        </div>
-        
-      </Layout>
-    </div>
-  )
-} else {
-  return (
-    <>
-    <h1 className='signIn'>You must sign in.</h1>
-    <Link to='/sign-in'><h2 className='signInLink'>sign in</h2></Link>
-    </>
-  )
-}
-
+      </>
+    );
+  }
 }
 
 export default Foods;

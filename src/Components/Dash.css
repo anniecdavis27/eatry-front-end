@@ -3,6 +3,13 @@
     color: #aa2020;
     padding-top:10px;
 }
+
+canvas {
+    width: 100vw !important;
+    height: auto !important;
+
+}
+
 h3 {
     font-size: 25px;
     text-align: left;
@@ -30,11 +37,7 @@ h3 {
 .app {
     background-color: #aa2020;
 }
-.chartjs-render-monitor {
-    max-height: 263px;
-    max-width: 526px;
-    text-align: center;
-}
+
 .signInLink {
     color: black;
 }
@@ -43,16 +46,6 @@ h3 {
 }
 
 @media screen and (min-width:768px) {
-    .dashContainer {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .chartjs-render-monitor {
-        max-height: 3000px;
-        max-width: 2000px;
-        margin-top: 6vh;
-    }
     .welcomeUser {
         font-size: 60px;
         padding-top:20px;
@@ -62,6 +55,20 @@ h3 {
         margin-right: 60px;
         font-size: 40px;
     }
+}
 
+@media (orientation: landscape) {
+    .dashContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        
+    }
+
+    canvas {
+        width: 50vw !important;
+        height: auto !important;
+    
+    }
 }
 

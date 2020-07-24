@@ -39,6 +39,12 @@ a:hover {
     border: none;
     color: white;
 }
+
+.dash:hover, .log:hover, .food:hover, .theTeam:hover {
+    border: none;
+    color: white;
+    text-decoration: underline;
+}
 .nav-items {
     visibility: hidden;
     width: 0px;

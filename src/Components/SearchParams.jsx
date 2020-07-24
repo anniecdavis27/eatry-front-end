@@ -1,4 +1,5 @@
 import React from "react";
+import './Foods.css'
 
 function SearchParams({ searchTerm, handleChange }) {
   return (
